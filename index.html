@@ -1,132 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is the personal website of Sankalp Bhandari, a graduate student of UT Dallas">
+    <meta name="keywords" content="Software Engineer, UTD, CS, Grad">
     <title>Sankalp Bhandari</title>
-    <script src='js/jquery-1.11.2.min.js'></script>
-    <script src='js/bootstrap.min.js'></script>
-    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+    <script src='https://code.jquery.com/jquery-1.x-git.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic'
           rel='stylesheet' type='text/css'>
-    <style>
-        body {
-            font-family: 'sans-serif';
-            font-size: 16px;
-            background-color: #f8fff4;
-            color: #4F6071;
-        }
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 
-        .color1 {
-            background-color: #CCC;
-        }
-
-        #header {
-            width: 100%;
-            height: 360px;
-            /* background-color: #e3efd5 */
-            background-image: url("images/utdallas_blur.jpg");
-            background-size: cover;
-            background-position: center;
-            color: #f4f7fc
-            /* background-color: #b30000; */
-            /* background-color: #CCC; */
-        }
-
-        #header-inner {
-            position: absolute;
-            width: 70%;
-            left: 30%;
-            top: 150px;
-        }
-
-        .img-me {
-            border: 3px solid white;
-            float: left;
-            height: 200px;
-        }
-
-        .header-text {
-            margin-top: 60px;
-            margin-left: 220px;
-        }
-
-        .header-text-name {
-            font-weight: bold;
-            font-size: 40px;
-        }
-
-        .header-text-email {
-            font-size: 20px;
-            font-style: italic;
-        }
-
-        .header-text-desc {
-            font-size: 20px;
-        }
-
-        #contact-info {
-            position: absolute;
-            left: 80%;
-            width: 20%;
-            top: 360px;
-            height: 100px;
-            background-color: #EEE;
-        }
-
-        .vspace {
-            margin-bottom: 20px;
-        }
-
-        .vspace-top {
-            margin-top: 30px;
-        }
-
-        .vspace-bottom {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .paper-image {
-            width: 150px;
-        }
-
-        .paper-title {
-            font-weight: bold;
-        }
-
-        .paper-authors {
-            font-style: italic;
-        }
-
-        .paper-link {
-        }
-    </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119746100-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-119746100-1');
-    </script>
 </head>
 <body>
 <div id='header'>
     <div id='header-inner'>
-        <img src='images/me-v2.jpg' class='img-circle img-me'>
+        <img src='images/me-v2.jpg' class='img-circle img-me' alt="my_image">
         <div class='header-text'>
             <div class='header-text-name'>
                 Sankalp Bhandari
             </div>
             <div class='header-text-email'>
-                sankalp dot bhandari at utdallas dot edu
+                A Computer Science Grad at UT Dallas
             </div>
             <div>
-                <a href="https://github.com/sankalpbhandari" style="color: #f4f7fc">[GitHub]</a>
-                <a href="https://www.linkedin.com/in/sankalpbhandari/" style="color: #f4f7fc">[LinkedIn]</a>
+                <ul class="list-inline social-buttons">
+                    <li><a href="mailto:sankalp.bhandari@gmail.com" target="_blank" title="Email"><i
+                            class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://twitter.com/sankalpbhandari" target="_blank" title="Twitter"><i
+                            class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/sankalp.bhandari/" target="_blank" title="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/sankalpbhandari/" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li><a href="https://github.com/sankalpbhandari/" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a></li>
+                    <li><a href="resume.pdf" target="_blank" title="Resume"><i class="fas fa-file"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -135,13 +55,167 @@
 <div class='container'>
     <div class='col-md-11 col-md-offset-1'>
         <div class='row'>
-            <h1 align="center">Page under construction</h1>
-            <div class='row vspace-bottom'>
-                <footer>
-                    <h4>&copy; Sankalp Bhandari</h4>
-                    <h6>(Design courtesy: <a href="https://cs.stanford.edu/people/jcjohns/">Justin Johnson</a>)</h6>
-                </footer>
+            <h3 style="text-align: center">About Me</h3></div>
+        <div class="well">
+            <p style="margin-bottom: 5px; text-align: center">I am a designer of an everyday thing called life. I design
+                thinking of making a difference</p>
+        </div>
+        <div class='row vspace-bottom'>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="images/PSSA.jpg"
+                                     alt="PS Security Analyst">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Dec 2018 - Current</h4>
+                                    <h4 class="subheading">PS Security Analyst</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Currently analyzing and performing PeopleSoft account
+                                        access administration <a
+                                                href="https://www.utdallas.edu/oit/departments/eas/east/"
+                                                target="_blank">Office of Info. Tech., UT
+                                            Dallas</a>.
+                                        Assist with audit and compliance activities to ensure that the security
+                                        setup and application usage within PeopleSoft and other designated
+                                        applications is in compliance with internal and external security
+                                        requirements.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="images/TA.jpg"
+                                     alt="Grader for CS Dept">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Sept 2018 - Dec 2018</h4>
+                                    <h4 class="subheading">Grader for CS Dept</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I worked as a grader for <a
+                                            href="https://cs.utdallas.edu/"> Computer Science Dept</a>. My primary
+                                        task included assisting the students in Advanced Software Requirements
+                                        subject. I graded their assignments and help them to under concepts like UML
+                                        designing and SRS Documentation.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="images/ssb.jpg"
+                                     alt="University of Texas at Dallas">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2018 - 2020</h4>
+                                    <h4 class="subheading">Masters in Computer Science</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I am doing my Masters in Computer Science at <a
+                                            href="https://www.utdallas.edu/" target="_blank">University of Texas at
+                                        Dallas</a>.
+                                        With serious projects in the areas like <a
+                                                href="https://github.com/sankalpbhandari/FashionMNIST"
+                                                target="_blank">Deep Learning</a>, <a
+                                                href="https://github.com/sankalpbhandari/LocationSentimentAnalysis"
+                                                target="_blank">Sentiment Analysis</a>, <a
+                                                href="https://github.com/sankalpbhandari/FileIndexing"
+                                                target="_blank">implementing my own rudimentary DBMS</a>. I am doing
+                                        specialisation in Intelligent Systems and enhancing
+                                        software development and analytical skills.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="images/softwaredev.jpg"
+                                     alt="Software Engineer">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2016 - 2018</h4>
+                                    <h4 class="subheading">Software Engineer</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I have worked as a software engineer at <a
+                                            href="http://www.gslab.com/" target="_blank">GS Lab
+                                    </a> for 2 years. Here, I developed several frameworks in python for automation
+                                        and testing.
+                                        I have handled issues like testing thousands of REST APIs, UI automation.
+                                        I was involved in documenting and testing various features like Role based
+                                        Access Control, mutli region controller deployment, SSO integration with the
+                                        product.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="images/mitpune-wpu.jpg"
+                                     alt="MIT, Pune">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2012 - 2016</h4>
+                                    <h4 class="subheading">Bachelors in Computer Science</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I completed my bachelors in <a
+                                            href="http://www.mitpune.com/" target="_blank">Maharashtra Institute of
+                                        Technology</a> Pune. Here, I earned great deal of technical expertise in
+                                        various languages. I was part of many on-campus technical and social clubs
+                                        and really enjoyed this time with my friends.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+                <li><i class="fa fa-home"></i>
+                    <span class="copyright"> 7740 Mccullum Blvd, #270, Dallas, TX - 75252</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+                <li><a href="mailto:sankalp.bhandari@gmail.com" target="_blank" title="Email"><i
+                        class="fas fa-envelope"></i></a></li>
+                <li><a href="https://twitter.com/sankalpbhandari" target="_blank" title="Twitter"><i
+                        class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/sankalp.bhandari/" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/sankalpbhandari/" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li><a href="https://github.com/sankalpbhandari/" target="_blank" title="GitHub"><i
+                        class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+                <li><i class="fa fa-envelope-o"></i><a href="mailto:sankalp.bhandari@utdallas.edu">
+                    sankalp.bhandari@utdallas.edu</a>
+                </li>
+                <li><a href="#"></a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
