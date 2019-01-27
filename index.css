@@ -29,7 +29,7 @@ body {
 }
 
 .img-me {
-    border: 3px solid white;
+    border: 3px solid #aaaaaa;
     float: left;
     height: 200px;
 }
