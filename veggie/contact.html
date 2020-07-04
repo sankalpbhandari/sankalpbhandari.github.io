@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="icon" href="img/Brouchur.png" type="image/icon type">
+    <link rel="icon" href="img/brochure.png" type="image/icon type">
 
 </head>
 
@@ -232,7 +232,7 @@
 <!-- Map Begin -->
 <div class="map">
     <iframe
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgTZxPrLr3TsRNFWwA8xYbbk&key=AIzaSyBPvb9siKEGbg8H12zooVrAohl_0DMcvdI"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgTZxPrLr3TsRNFWwA8xYbbk&key=AIzaSyBPvb9siKEGbg8H12zooVrAohl_0DMcvdI"
             height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     <div class="map-inside">
         <i class="icon_pin"></i>
@@ -257,16 +257,16 @@
                 </div>
             </div>
         </div>
-        <form action="#">
+        <form id="customerForm" action="javascript:void(0);" onsubmit="submitform()">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your name">
+                    <input type="text" placeholder="Your name" name="entry.326955045" required>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your Email">
+                    <input type="text" placeholder="Your Email" name="entry.1696159737" required>
                 </div>
                 <div class="col-lg-12 text-center">
-                    <textarea placeholder="Your message"></textarea>
+                    <textarea placeholder="Your message" name="entry.485428648" required></textarea>
                     <button type="submit" class="site-btn">SEND MESSAGE</button>
                 </div>
             </div>
@@ -289,9 +289,15 @@
                             <li>Address: Shop No.1, <br>Madhushree Apartments, <br>Police Commissioner Office Rd,
                                 <br>Canada Corner, Sharanpur,<br>
                                 Nashik, Maharashtra 422005
-                                India</li></a>
-                        <a href="tel:+917972285499"><li>Phone: +91 79722-85499</li></a>
-                        <a href="mailto:veggielifestylensk@gmail.com"><li>Email: veggielifestylensk@gmail.com</li></a>
+                                India
+                            </li>
+                        </a>
+                        <a href="tel:+917972285499">
+                            <li>Phone: +91 79722-85499</li>
+                        </a>
+                        <a href="mailto:veggielifestylensk@gmail.com">
+                            <li>Email: veggielifestylensk@gmail.com</li>
+                        </a>
                     </ul>
                 </div>
             </div>
@@ -305,14 +311,15 @@
                     <ul>
                         <li><a href="#">Who We Are</a></li>
                         <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="footer__widget">
                     <div class="footer__widget__social">
-                        <a href="https://www.facebook.com/VEGGiE-Lifestyle-130863037783857/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/VEGGiE-Lifestyle-130863037783857/"><i
+                                class="fa fa-facebook"></i></a>
                         <a href="https://www.instagram.com/veggielifestyle_nsk/"><i class="fa fa-instagram"></i></a>
                         <a href="https://wa.me/917972285499"><i class="fa fa-whatsapp"></i></a>
                     </div>
@@ -325,12 +332,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="footer__copyright">
-                    <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed.
+                    <div class="footer__copyright__text">
+                        <p><!-- Link back to Colorlib can't be removed.
                         Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-                        | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by
-                        <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved
+                            | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by
+                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
 
                 </div>
             </div>
@@ -348,7 +358,32 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/sweetalert2.js"></script>
 
+<script>
+    function submitform() {
+        var formdata = $('#customerForm').serialize();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSclhXYUgyd2QHKUMB5HZ1AZ8pA941_KLijIvLHt16hDXtmOSg/formResponse",
+            data: formdata,
+            success: function () {
+                Swal.fire({
+                    title: 'Thank you for your message!',
+                    text: "We will contact you shortly",
+                    showConfirmButton: true,
+                    confirmButtonColor: "#7fad39"
+                })            },
+            error: function () {
+                Swal.fire({
+                    title: 'Thank you for your message!',
+                    text: "We will contact you shortly",
+                    showConfirmButton: true,
+                    confirmButtonColor: "#7fad39"
+                })
+            }
+        })
+    }
+</script>
 
 </body>
 
