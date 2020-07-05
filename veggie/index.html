@@ -673,7 +673,7 @@
                     '                <div class="featured__item">\n' +
                     '                    <div class="featured__item__pic" style="background-image: url(' + product.img + ')">\n' +
                     '                        <ul class="featured__item__pic__hover">\n' +
-                    '                            <li><a data-toggle="modal" href="#modalCenter" id="' + product.id + '"><i class="fa fa-info"></i></a>\n' +
+                    '                            <li><a data-toggle="modal" data-target="#modalCenter" id="' + product.id + '"><i class="fa fa-info"></i></a>\n' +
                     '                            </li>\n' +
                     '                        </ul>\n' +
                     '                    </div>\n' +
@@ -700,10 +700,13 @@
 <script>
     $(function () {
         $(".featured__item__pic__hover").on("click", "a", function () {
+            $("#modalCenter").modal('hide');
             var id = $(this).get(0).id;
             id = parseInt(id) - 1;
             $("#modalProdDesc").text(productList[id].product + productList[id].product + productList[id].product + productList[id].product + productList[id].product);
             $("#modalProdImg").attr("src", productList[id].img);
+            $("#modalCenter").modal('show');
+
         })
     });
 </script>
