@@ -592,6 +592,7 @@
             $("#modalCenter").modal('hide');
             var id = $(this).get(0).id;
             id = parseInt(id) - 1;
+            console.log("Clicked on ID "+id);
             $("#modalProdDesc").text(productList[id].product + productList[id].product + productList[id].product +
                 productList[id].product + productList[id].product);
             $("#modalProdImg").attr("src", productList[id].img);
