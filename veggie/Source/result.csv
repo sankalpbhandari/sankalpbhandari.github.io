@@ -1,12 +1,12 @@
 ﻿categories,img,id,product,description,price
 mix bodycare ,img/products/aloeveragel.jpg,1,Aloe Vera Gel,No Desc,0
 mix bodycare ,img/products/facialscrub.jpg,2,Body Scrub,No Desc,0
-mix bodycare ,img/products/watermelon.jpg,3,Designer Soap,No Desc,0
+mix bodycare ,img/products/watermelon1.jpg,3,Designer Soap,No Desc,0
 mix bodycare ,img/products/kokamfootbalm.jpg,4,Footbalm,No Desc,0
 mix bodycare ,img/products/handandfoot.jpg,5,Hand & Foot Spa Kit,No Desc,0
-mix bodycare ,img/products/maitri.jpg,6,Maitri Soap,No Desc,0
+mix bodycare ,img/products/maitri1.jpg,6,Maitri Soap,No Desc,0
 mix bodycare ,img/products/moisturiser.jpg,7,Moisturizer,No Desc,0
-mix bodycare ,img/products/veggie.jpg,8,Veggie Soap,No Desc,0
+mix bodycare ,img/products/veggie1.jpg,8,Veggie Soap,No Desc,0
 mix bodycare ,img/products/na.jpg,9,Pearl Soap,No Desc,0
 mix bodycare ,img/products/sudha.jpg,10,Sudha Toothpaste,No Desc,0
 mix bodycare ,img/products/na.jpg,11,Sanitary Napkins,No Desc,0
@@ -38,7 +38,7 @@ mix skincare ,img/products/collagen.jpg,36,Collagen Night Cream,No Desc,0
 mix skincare ,img/products/daycream15.jpg,37,Day Cream,No Desc,0
 mix skincare ,img/products/facialscrub.jpg,38,Facial Scrub,No Desc,0
 mix skincare ,img/products/fairness.jpg,39,Fairness Cream,No Desc,0
-mix skincare ,img/products/fairnessmulberry2.jpg,40,Spotless Fairness Cream,No Desc,0
+mix skincare ,img/products/fairnessmulberry1.jpg,40,Spotless Fairness Cream,No Desc,0
 mix skincare ,img/products/firming.jpg,41,Firming Pack,No Desc,0
 mix skincare ,img/products/na.jpg,42,Fruit Facewash,No Desc,0
 mix homecare ,img/products/na.jpg,43,Dishwash,"Veggie Dishwash Liquid is for all purpose dishwashing formula infused with lemon enabling anti bacterial properties, grease cutting power for faster removal.",0
