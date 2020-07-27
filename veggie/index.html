@@ -565,8 +565,8 @@
             for (var product of productList) {
                 var elem = '<div class="col-lg-3 col-md-4 col-sm-6 ' + product.categories + '">\n' +
                     '                <div class="featured__item">\n' +
-                    '                    <div class="featured__item__pic">' +
-                    '<img src=' + product.img + ' alt="Not available" width=200px height=200px>\n' +
+                    '                     <div class="featured__item__pic" style="background: url(' + product.img + ') no-repeat center' +
+                    '; background-size : 270px">\n' +
                     '                        <ul class="featured__item__pic__hover">\n' +
                     '                            <li><a id="' + product.id +
                     '"><i class="fa fa-info"></i></a>\n' +
@@ -599,7 +599,7 @@
             $("#modalCenter").modal('hide');
             var id = $(this).get(0).id;
             id = parseInt(id) - 1;
-            $("#modalProdDesc").text(productList[id].description.replace("\"","").replace("\"",""));
+            $("#modalProdDesc").text(productList[id].description.replace("\"", "").replace("\"", ""));
             $("#modalProdImg").attr("src", productList[id].img);
             $("#modalCenter").modal('show');
 
