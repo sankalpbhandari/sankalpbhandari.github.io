@@ -21,14 +21,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 html, body {
-	max-width: 100%;
-	overflow-x: hidden;
-    scrollbar-width: none;
+    max-width: 100%;
+    overflow-x: hidden !important;
 }
 
 body {
+    margin-top: 2%;
     line-height: 1;
-	margin: 5%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,20 +69,21 @@ a:active, a:focus {
 ----------------------------- */
 
 body {
-    background: #9fddea url(images/bg-bottom.png) bottom center no-repeat;
+    background: #9fddea url(media/bg-bottom.png) bottom center no-repeat;
 }
 
-#container {
+#container1 {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    height: auto !important;
 }
 
 /*Sections
 ----------------------------*/
 #section1 {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
 }
 
@@ -116,8 +116,6 @@ body {
 #as {
     position: relative;
     width: 75%;
-    height: 755px;
-    background: url(images/karlandgina.png) 0 0 no-repeat;
     float: right;
 }
 
@@ -125,7 +123,8 @@ body {
     right: 78px;
     width: 433px;
     height: 358px;
-    background: url(images/lunaplane.png) 0 0 no-repeat;
+    background: url(media/lunaplane.png) 0 0 no-repeat;
+    font-family: 'Handlee', sans-serif;
 }
 
 #datelocation {
@@ -135,90 +134,20 @@ body {
     z-index: 1;
 }
 
-#joinus {
-    position: absolute;
-    top: 80px;
-    background: url(images/joinus.png) no-repeat;
-    width: 823px;
-    height: 427px;
-}
-
-
 #btn-rsvp:hover {
-    background-position:0 -87px;
-}
-
-#travelinfo {
-    position: absolute;
-    top: 80px;
-    left:0;
-    margin-left: -31px;
-    background: url(images/travelinfo.png);
-    width: 810px;
-    height: 614px;
-}
-
-#hsresort {
-    position: absolute;
-    left: 195px;
-    top: 80px;
-    width: 810px;
-    height: 642px;
-    background: url(images/hsresort.png);
-}
-
-#btn-trails {
-    position: absolute;
-    display: block;
-    height: 200px;
-    width: 146px;
-    background: url(images/btn-trails.png)0 0 no-repeat;
-    text-indent: -9999em;
-    right: 372px;
-    top: 417px;
+    background-position: 0 -87px;
 }
 
 #btn-trails:hover {
-    background-position:0 -200px;
-}
-
-#btn-property {
-    position: absolute;
-    display: block;
-    width: 158px;
-    height: 144px;
-    background: url(images/btn-property.png)0 0 no-repeat;
-    text-indent: -9999em;
-    left: 146px;
-    top: 498px;
+    background-position: 0 -200px;
 }
 
 #btn-property:hover {
-    background-position:0 -144px;
-}
-
-#registry {
-    position: absolute;
-    left: 3px;
-    top: 80px;
-    width: 810px;
-    height: 281px;
-    background: url(images/registry.png);
-}
-
-#btn-honeyfund {
-    position: absolute;
-    display: block;
-    width: 162px;
-    height: 29px;
-    text-indent: -9999em;
-    background: url(images/btn-honeyfund.png)0 0 no-repeat;
-    top: 89px;
-    left: 564px;
+    background-position: 0 -144px;
 }
 
 #btn-honeyfund:hover {
-    background-position:0 -29px;
+    background-position: 0 -29px;
 }
 
 /* Floating Critters
@@ -236,148 +165,45 @@ body {
     left: 778px;
 }
 
-#rocketpig {
-    position: absolute;
-    left:0;
-    top: 180px;
-}
-
 /* Top Links
 --------------------------*/
-#btn-weekend {
-    display: block;
-    width: 93px;
-    height: 43px;
-    background: url(images/btn-weekend.png)0 0 no-repeat;
-    cursor: pointer;
-    text-indent: -9999em;
-    position: relative;
-    top: 43px;
-    left: 72px;
-}
-
-#btn-travel {
-    display: block;
-    width: 69px;
-    height: 43px;
-    background: url(images/btn-travel.png)0 0 no-repeat;
-    cursor: pointer;
-    text-indent: -9999em;
-    position: relative;
-    left: 178px;
-}
-
-#btn-resort {
-    display: block;
-    width: 66px;
-    height: 43px;
-    background: url(images/btn-resort.png)0 0 no-repeat;
-    cursor: pointer;
-    text-indent: -9999em;
-    position: relative;
-    top: -43px;
-    left: 259px;
-}
-
-#btn-registry {
-    display: block;
-    width: 81px;
-    height: 59px;
-    background: url(images/btn-registry.png)0 0 no-repeat;
-    cursor: pointer;
-    text-indent: -9999em;
-    position: relative;
-    top: -69px;
-    left: 338px;
-}
-
-#btn-weekend:hover, #btn-travel:hover, #btn-resort:hover {
-    background-position:0 -43px;
-}
-
-#btn-registry:hover {
-    background-position: 0 -59px;
-}
-
 /* Links
 -----------------*/
 #clouds {
     position: absolute;
     width: 100%;
-    height: 100%;
-    background: transparent url(images/clouds.png) 0 0 repeat-x;
+    height: 575%;
     top: 0;
     left: 0;
     z-index: -2;
-
-}
-
-a.up {
-    display: block;
-    width: 86px;
-    height: 36px;
-    background: url(images/up.png)0 0 no-repeat;
-    cursor: pointer;
-}
-
-a.up:hover, a.up:active {
-    background-position:0 -36px;
-}
-
-a.down {
-    display: block;
-    width: 86px;
-    height: 36px;
-    background: url(images/down.png)0 0 no-repeat;
-    float: right;
-    cursor: pointer;
+    background: url("media/clouds.png");
 }
 
 a.top {
     display: block;
-    width: 86px;
+    width: 80px;
     height: 39px;
-    background: url(images/top.png)0 0 no-repeat;
+    background: url(media/top.png) 0 0 no-repeat;
     cursor: pointer;
 }
 
 a.down:hover, a.down:active, a.top:hover, a.top:active {
-    background-position:0 -38px;
+    background-position: 0 -38px;
 }
 
 .nav {
-    width: 86px;
-    height: 75px;
-}
-
-#nav2 {
-    position: relative;
-    top: 400px;
-    right:0;
-    float: right;
-    z-index: 100;
-}
-
-#nav3 {
-    position: relative;
-    top: 576px;
-    left: 770px;
-    z-index: 10;
-}
-
-#nav4 {
-    position: absolute;
-    top: 616px;
-    right:0;
-    margin-right: -75px;
-    z-index: 10;
-}
-
-#nav5 {
-    position: absolute;
-    top: 270px;
-    left: 790px;
-    z-index: 10;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #babad2; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 5px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
 }
 
 /**
@@ -436,6 +262,36 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     width: 100%;
     text-align: center;
     line-height: 0;
+}
+
+.about_us div {
+    text-align: justify;
+    text-align-last: left;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.about_us h3 {
+    border: 40px solid;
+    padding: 15px;
+    border-image: url("media/bottom-border2.png") 34 35 round;
+    background-color: #F6FBFC;
+    font-family: 'Handlee', sans-serif;
+    font-size: 36px;
+}
+
+.about_resort {
+    border: 35px solid;
+    border-image: url("media/bottom-border2.png") 35 36 round;
+    font-family: 'Handlee', sans-serif;
+    font-size: 36px;
+}
+
+.inside_about {
+    background-color: #F6FBFC;
+    padding: 10px;
+    text-align: justify;
+    font-size: 30px;
 }
 
 #lightbox-nav {

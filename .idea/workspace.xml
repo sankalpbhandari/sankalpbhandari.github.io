@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,43 +23,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/veggie/img/products/ubtanscrub1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/veggie/img/products/veggie1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/veggie/img/products/watermelon1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/veggie/img/products/ubtanscrub.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/veggie/img/products/veggie.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/veggie/img/products/watermelon.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/contents/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/contents/js/controls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/contents/media/mayera - Copy (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/contents/media/mayera - Copy (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/contents/media/mayera - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/contents/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/contents/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="1eERYxRWHvW1v26X25PEREWCv0M" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="RainbowCSV.Settings" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sankalbh/PhpstormProjects/sankalpbhandari.github.io/wedding/contents&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.deploy.options&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\contents" />
+      <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\contents\media" />
+      <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\SimmyKaAppu_files\images" />
+    </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8081/sankalpbhandari.github.io/wedding/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -70,11 +101,19 @@
       <workItem from="1593884821384" duration="20086000" />
       <workItem from="1595791446394" duration="537000" />
       <workItem from="1595800934458" duration="8385000" />
+      <workItem from="1699133853971" duration="1663000" />
+      <workItem from="1700331258611" duration="875000" />
+      <workItem from="1700332696322" duration="3491000" />
+      <workItem from="1700439890731" duration="4625000" />
+      <workItem from="1700777316029" duration="595000" />
+      <workItem from="1700941718657" duration="13106000" />
+      <workItem from="1700960396166" duration="334000" />
+      <workItem from="1700960816661" duration="42199000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -86,28 +125,17 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593901563807">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1593901563807" />
-    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593921713178">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1593921713178" />
-    <state x="397" y="199" key="SettingsEditor" timestamp="1595810287359">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1595810287359" />
-    <state x="597" y="149" width="598" height="822" key="find.popup" timestamp="1595812327829">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="597" y="149" width="598" height="822" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1595812327829" />
-    <state x="561" y="222" width="670" height="676" key="search.everywhere.popup" timestamp="1595810829507">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="561" y="222" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1595810829507" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/wedding/contents/js/jquery.spritely-0.1.js</url>
+          <line>256</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
