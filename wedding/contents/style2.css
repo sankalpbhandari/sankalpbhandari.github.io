@@ -158,14 +158,11 @@
     text-shadow: 0 0 3px black;
 }
 
-.ganeshay {
-text-align: center;
-    padding: 20px;
-    font-size: 80px;
-    font-weight: bolder;
-    background: -webkit-linear-gradient(red, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;"
+@font-face {
+    font-family: 'BlackChancery';
+    font-style: normal;
+    font-weight: 5;
+    src: url('media/BLKCHCRY_0.woff') format('woff');
 }
 
 .timeline .timeline-heading h4.timedate {
@@ -300,6 +297,13 @@ aside.clients img {
     text-align: center;
     color: #fff !important;
     z-index: 2;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .normal-dense {

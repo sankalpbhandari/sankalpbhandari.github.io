@@ -57,7 +57,7 @@ window.addEventListener("touchstart", () => {
 })
 
 function disableMute() {
-    let vid = document.getElementById("audio");
+    let vid = document.getElementById("video");
     console.log(vid)
     if (vid.muted) {
         vid.muted = false;
