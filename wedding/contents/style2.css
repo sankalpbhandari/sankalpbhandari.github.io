@@ -107,7 +107,11 @@
 
 .no-underline a {
     text-decoration: none;
-    font-size: 20px;
+    line-height: 2;
+}
+
+.no-underline td {
+    padding-left: 10px;
 }
 
 .timeline > li .timeline-inverted-image-oppose img{
@@ -170,7 +174,29 @@
     font-family: 'Handlee', sans-serif;
     font-weight: bolder;
     font-size: 35px;
+    color: rgb(30,48,80);;
+}
+
+.timeline .timeline-heading h4.timedate i {
     color: black;
+}
+
+.image {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
 }
 
 .timeline .timeline-heading h4.timedate span {
