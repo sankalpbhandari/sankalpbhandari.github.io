@@ -34,7 +34,8 @@ $(function () {
             speed: 2000,
             pause: 2000
         });*/
-
+        
+        $('#lantern').pan({fps: 90, speed: 0, dir: 'up'}).active();
         $('#as').sprite({fps: 8, no_of_frames: 1, bounce: [150, 0, 500]})
             .spRandom({
                 top: 20,
@@ -59,8 +60,13 @@ window.addEventListener("touchstart", () => {
 function disableMute() {
     let vid = document.getElementById("video");
     console.log(vid)
-    if (vid.muted) {
+    if (vid?.muted) {
         vid.muted = false;
         vid.play();
+    }
+    let audio = document.getElementById("audio");
+    console.log(audio)
+    if (audio) {
+        audio.play();
     }
 }

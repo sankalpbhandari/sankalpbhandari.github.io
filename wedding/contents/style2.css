@@ -169,12 +169,12 @@
     src: url('media/BLKCHCRY_0.woff') format('woff');
 }
 
-.timeline .timeline-heading h4.timedate {
+.timeline-panel .timeline-heading h4.timedate {
     text-transform: none;
     font-family: 'Handlee', sans-serif;
     font-weight: bolder;
-    font-size: 35px;
-    color: rgb(30,48,80);;
+    font-size: 60px;
+    color: #CE93A6;
 }
 
 .timeline .timeline-heading h4.timedate i {
