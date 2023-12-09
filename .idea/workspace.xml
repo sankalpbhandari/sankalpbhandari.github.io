@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="" />
+    <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding/reception.html" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/reception.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.deploy.options",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,6 +107,7 @@
       <workItem from="1700960396166" duration="334000" />
       <workItem from="1700960816661" duration="42451000" />
       <workItem from="1701490824904" duration="41379000" />
+      <workItem from="1702139504334" duration="10907000" />
     </task>
     <servers />
   </component>

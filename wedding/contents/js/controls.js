@@ -1,3 +1,4 @@
+let musicPlayed = false;
 $(function () {
     $('div.nav a').bind('click', function (event) {
         let $anchor = $(this);
@@ -22,7 +23,7 @@ $(function () {
 (function ($) {
     $(document).ready(function () {
 
-
+        console.log(document.body.scrollHeight)
         $('#clouds').pan({fps: 60, speed: 0, dir: 'right'});
 
         $('#lunaplane').sprite({fps: 60, no_of_frames: 3})
@@ -66,7 +67,8 @@ function disableMute() {
     }
     let audio = document.getElementById("audio");
     console.log(audio)
-    if (audio) {
+    if (audio && !musicPlayed) {
         audio.play();
+        musicPlayed = true;
     }
 }

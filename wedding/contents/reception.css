@@ -177,7 +177,7 @@ body {
     min-height: 6560px;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: -3;
     background: url("media/lantern.png");
     /*opacity: 0.75;*/
 }
@@ -253,7 +253,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     line-height: 0;
 }
 
-#name {
+.golden {
     background-image: linear-gradient(
             to right,
             #462523 0,

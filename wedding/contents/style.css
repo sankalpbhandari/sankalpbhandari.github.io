@@ -173,7 +173,7 @@ body {
     position: absolute;
     width: 100%;
     bottom: 0;
-    min-height: 9225px;
+    min-height: 11150px;
     top: 0;
     left: 0;
     z-index: -2;
@@ -186,6 +186,21 @@ a.top {
     height: 39px;
     background: url(media/top.png) 0 0 no-repeat;
     cursor: pointer;
+}
+
+.blue-silver {
+    background-image: linear-gradient(
+            to right,
+            #0b2545 0,
+            #13315c 22%,
+            #134074 45%,
+            #105060 50%,
+            #134074 55%,
+            #13315c 78%,
+            #0b2545 100%
+    );
+    color:transparent;
+    -webkit-background-clip:text;
 }
 
 a.down:hover, a.down:active, a.top:hover, a.top:active {
