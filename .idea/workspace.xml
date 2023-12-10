@@ -23,8 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sankalpbhandari.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sankalpbhandari.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wedding/reception.html" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/reception.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/contents/js/controls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/media/bg-bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/media/couple.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/media/srk.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/media/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/contents/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/contents/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/contents/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marriage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +53,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="1eERYxRWHvW1v26X25PEREWCv0M" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sankalbh/PhpstormProjects/sankalpbhandari.github.io/wedding/contents",
+    "last_opened_file_path": "C:/Users/sankalbh/PhpstormProjects/sankalpbhandari.github.io",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,18 +78,23 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io" />
       <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\contents" />
       <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding" />
       <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\contents\media" />
       <recent name="C:\Users\sankalbh\PhpstormProjects\sankalpbhandari.github.io\wedding\SimmyKaAppu_files\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8081/sankalpbhandari.github.io/marriage/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8081/sankalpbhandari.github.io/wedding/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -107,7 +122,7 @@
       <workItem from="1700960396166" duration="334000" />
       <workItem from="1700960816661" duration="42451000" />
       <workItem from="1701490824904" duration="41379000" />
-      <workItem from="1702139504334" duration="12065000" />
+      <workItem from="1702139504334" duration="34242000" />
     </task>
     <servers />
   </component>
