@@ -1,4 +1,3 @@
-let musicPlayed = false;
 $(function () {
     $('div.nav a').bind('click', function (event) {
         let $anchor = $(this);
@@ -35,7 +34,7 @@ $(function () {
             speed: 2000,
             pause: 2000
         });*/
-        
+
         $('#lantern').pan({fps: 90, speed: 0, dir: 'up'}).active();
         $('#as').sprite({fps: 8, no_of_frames: 1, bounce: [150, 0, 500]})
             .spRandom({
@@ -58,17 +57,22 @@ window.addEventListener("touchstart", () => {
     disableMute();
 })
 
+window.addEventListener("touchmove", () => {
+    disableMute();
+})
+
 function disableMute() {
-    let vid = document.getElementById("video");
-    console.log(vid)
-    if (vid?.muted) {
-        vid.muted = false;
-        vid.play();
-    }
     let audio = document.getElementById("audio");
-    console.log(audio)
-    if (audio && !musicPlayed) {
+    if (audio) {
+        audio.muted = false;
         audio.play();
-        musicPlayed = true;
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
     }
 }

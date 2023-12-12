@@ -295,7 +295,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     border: 40px solid;
     padding: 15px;
     border-image: url("media/bottom-border2.png") 34 35 round;
-    background-color: #F6FBFC;
+    background-color: #FFEDF1;
     font-family: 'Handlee', sans-serif;
     font-size: 36px;
 }
@@ -308,10 +308,11 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
 }
 
 .inside_about {
-    background-color: #F6FBFC;
+    background-color: #FFEDF1;
     padding: 10px;
     text-align: justify;
     font-size: 30px;
+    color: #85355F;
 }
 
 #lightbox-nav {
@@ -389,7 +390,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     position: absolute;
     width: 100%;
     bottom: 0;
-    min-height: 7739px;
+    min-height: 9820px;
     top: 0;
     left: 0;
     z-index: -2;

@@ -169,11 +169,19 @@ body {
 --------------------------*/
 /* Links
 -----------------*/
+
+.soundcloud {
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
 #clouds {
     position: absolute;
     width: 100%;
     bottom: 0;
-    min-height: 11150px;
+    min-height: 11023px;
     top: 0;
     left: 0;
     z-index: -2;
@@ -308,6 +316,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     padding: 10px;
     text-align: justify;
     font-size: 30px;
+    color: #13315c;
 }
 
 #lightbox-nav {
