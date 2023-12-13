@@ -1,3 +1,4 @@
+let played = 0;
 $(function () {
     $('div.nav a').bind('click', function (event) {
         let $anchor = $(this);
@@ -63,7 +64,7 @@ window.addEventListener("touchmove", () => {
 
 function disableMute() {
     let audio = document.getElementById("audio");
-    if (audio) {
+    if (audio && played <= 3) {
         audio.muted = false;
         audio.play();
         audio.muted = false;
@@ -74,5 +75,6 @@ function disableMute() {
         audio.play();
         audio.muted = false;
         audio.play();
+        played += 1;
     }
 }

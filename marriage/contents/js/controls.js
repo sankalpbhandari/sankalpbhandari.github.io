@@ -1,4 +1,4 @@
-let musicPlayed = false;
+let played = 0;
 $(function () {
     $('div.nav a').bind('click', function (event) {
         let $anchor = $(this);
@@ -59,16 +59,18 @@ window.addEventListener("touchstart", () => {
 })
 
 function disableMute() {
-    let vid = document.getElementById("video");
-    console.log(vid)
-    if (vid?.muted) {
-        vid.muted = false;
-        vid.play();
-    }
     let audio = document.getElementById("audio");
-    console.log(audio)
-    if (audio && !musicPlayed) {
+    if (audio && played <= 3) {
+        audio.muted = false;
         audio.play();
-        musicPlayed = true;
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        played += 1;
     }
 }

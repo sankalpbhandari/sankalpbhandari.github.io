@@ -1,4 +1,4 @@
-let musicPlayed = false;
+let played = 0;
 $(function () {
     $('div.nav a').bind('click', function (event) {
         let $anchor = $(this);
@@ -35,7 +35,7 @@ $(function () {
             speed: 2000,
             pause: 2000
         });*/
-        
+
         $('#lantern').pan({fps: 90, speed: 0, dir: 'up'}).active();
         $('#as').sprite({fps: 8, no_of_frames: 1, bounce: [150, 0, 500]})
             .spRandom({
@@ -60,9 +60,17 @@ window.addEventListener("touchstart", () => {
 
 function disableMute() {
     let audio = document.getElementById("audio");
-    console.log(audio)
-    if (audio && !musicPlayed) {
+    if (audio && played <= 3) {
+        audio.muted = false;
         audio.play();
-        musicPlayed = true;
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        audio.muted = false;
+        audio.play();
+        played += 1;
     }
 }

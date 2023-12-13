@@ -272,4 +272,9 @@ aside.clients img {
     max-width: 70%
 }
 
-
+.soundcloud {
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}

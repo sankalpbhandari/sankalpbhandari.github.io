@@ -409,3 +409,10 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     float: right;
     padding-bottom: 0.7em;
 }
+
+.soundcloud {
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
