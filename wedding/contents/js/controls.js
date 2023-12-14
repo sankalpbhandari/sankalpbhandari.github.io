@@ -75,6 +75,5 @@ function disableMute() {
         audio.play();
         audio.muted = false;
         audio.play();
-        played += 1;
     }
 }
