@@ -88,7 +88,7 @@
 }
 .hr2 {
     width: 500px;
-    border-image: url("media/hr-divide.png");
+    border-image: url("photos/hr-divide.png");
     margin-left: 10px;
 }
 
@@ -153,7 +153,7 @@
     font-family: 'BlackChancery';
     font-style: normal;
     font-weight: 5;
-    src: url('media/BLKCHCRY_0.woff') format('woff');
+    src: url('photos/BLKCHCRY_0.woff') format('woff');
 }
 
 .timeline-panel .timeline-heading h4.timedate {

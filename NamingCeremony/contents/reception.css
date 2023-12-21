@@ -324,7 +324,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
 .about_us h3 {
     border: 40px solid;
     padding: 15px;
-    border-image: url("media/bottom-border2.png") 34 35 round;
+    border-image: url("photos/bottom-border2.png") 34 35 round;
     background-color: #F6FBFC;
     font-family: 'Handlee', sans-serif;
     font-size: 36px;
@@ -332,7 +332,7 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
 
 .about_resort {
     border: 35px solid;
-    border-image: url("media/bottom-border2.png") 35 36 round;
+    border-image: url("photos/bottom-border2.png") 35 36 round;
     font-family: 'Handlee', sans-serif;
     font-size: 36px;
 }

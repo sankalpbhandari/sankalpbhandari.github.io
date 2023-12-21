@@ -22,7 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="" />
+    <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamingCeremony/contents/reception.css" beforeDir="false" afterPath="$PROJECT_DIR$/NamingCeremony/contents/reception.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamingCeremony/contents/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/NamingCeremony/contents/style2.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,6 +130,7 @@
       <workItem from="1702612527929" duration="227000" />
       <workItem from="1702687792047" duration="133000" />
       <workItem from="1702704869533" duration="120000" />
+      <workItem from="1703141259404" duration="617000" />
     </task>
     <servers />
   </component>
