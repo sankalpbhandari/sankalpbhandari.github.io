@@ -407,3 +407,14 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     z-index: -2;
     background: url("media/glitter.gif")
 }
+
+.button {
+    background-color: #FFC9E0; /* Green */
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-family: 'Handlee', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}

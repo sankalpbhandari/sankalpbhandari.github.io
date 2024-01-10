@@ -416,3 +416,14 @@ a.down:hover, a.down:active, a.top:hover, a.top:active {
     top: 20px;
     width: 100%;
 }
+
+.button {
+    background-color: #EEE8AA; /* Green */
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-family: 'Handlee', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}

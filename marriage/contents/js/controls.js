@@ -23,6 +23,28 @@ $(function () {
 (function ($) {
     $(document).ready(function () {
 
+        let param = null;
+        let searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has('q')) {
+            param = searchParams.get('q')
+        }
+        if (param !== null) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "button",
+                },
+                buttonsStyling: false
+            });
+            swalWithBootstrapButtons.fire({
+                title: "<div style=\"font-family:'Handlee',serif;\">Jai Jinendra " + param + "</div>",
+                imageHeight: 150,
+                imageUrl: "contents/media/couple.gif",
+                confirmButtonText: "Go to invitation"
+            }).then((result) => {
+                    disableMute()
+                }
+            );
+        }
         console.log(document.body.scrollHeight)
         $('#doli').pan({fps: 60, speed: 0, dir: 'left'}).active();
 
