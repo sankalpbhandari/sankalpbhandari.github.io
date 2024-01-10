@@ -1,3 +1,4 @@
+import user from "./../../../names.json" assert { type: 'json' };
 let played = 0;
 $(function () {
     $('div.nav a').bind('click', function (event) {
@@ -26,9 +27,9 @@ $(function () {
         let param = null;
         let searchParams = new URLSearchParams(window.location.search)
         if (searchParams.has('q')) {
-            param = searchParams.get('q')
+            param = user[searchParams.get('q')]
         }
-        if (param !== null) {
+        if (param !== null && param !== undefined) {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
                     confirmButton: "button",
