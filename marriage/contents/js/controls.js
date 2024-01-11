@@ -38,7 +38,7 @@ $(function () {
             swalWithBootstrapButtons.fire({
                 title: "<div style=\"font-family:'Handlee',serif;font-size: 36px\">Jai Jinendra " + param + "</div>",
                 imageHeight: 300,
-                background: "#FAFAFC",
+                background: 'url("contents/media/welcome2.png")',
                 imageUrl: "contents/media/welcome.png",
                 confirmButtonText: "Go to invitation"
             }).then((result) => {
@@ -82,6 +82,12 @@ window.addEventListener("touchstart", () => {
 })
 
 function disableMute() {
+    let video = document.getElementById("video");
+    video.play();
+    video.play();
+    video.play();
+    video.play();
+    video.play();
     let audio = document.getElementById("audio");
     if (audio && played <= 3) {
         audio.muted = false;

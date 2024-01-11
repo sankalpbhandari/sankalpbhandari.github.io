@@ -39,7 +39,7 @@ $(function () {
                 title: "<div style=\"font-family:'Handlee',serif;font-size: 36px\">Jai Jinendra " + param + "</div>",
                 imageHeight: 300,
                 imageUrl: "contents/media/welcome.png",
-                background: "#FAFAFC",
+                background: 'url("contents/media/welcome2.png")',
                 confirmButtonText: "Go to invitation"
             }).then((result) => {
                     disableMute()
@@ -82,6 +82,12 @@ window.addEventListener("touchstart", () => {
 })
 
 function disableMute() {
+    let video = document.getElementById("video");
+    video.play();
+    video.play();
+    video.play();
+    video.play();
+    video.play();
     let audio = document.getElementById("audio");
     if (audio && played <= 3) {
         audio.muted = false;
