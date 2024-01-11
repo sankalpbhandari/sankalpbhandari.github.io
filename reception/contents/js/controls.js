@@ -36,9 +36,10 @@ $(function () {
                 buttonsStyling: false
             });
             swalWithBootstrapButtons.fire({
-                title: "<div style=\"font-family:'Handlee',serif;\">Jai Jinendra " + param + "</div>",
-                imageHeight: 150,
-                imageUrl: "contents/media/couple.gif",
+                title: "<div style=\"font-family:'Handlee',serif;font-size: 36px\">Jai Jinendra " + param + "</div>",
+                imageHeight: 300,
+                imageUrl: "contents/media/welcome.png",
+                background: "#FAFAFC",
                 confirmButtonText: "Go to invitation"
             }).then((result) => {
                     disableMute()
@@ -100,6 +101,5 @@ async function getNames() {
     let data;
     const response = await  fetch("./../../../names.json")
     data = await response.json();
-    console.log(data)
     return data;
 }
