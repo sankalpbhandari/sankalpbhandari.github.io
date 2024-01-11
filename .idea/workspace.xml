@@ -23,14 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29741e36-acef-43fb-90ff-ce7a41c37d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/names.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marriage/contents/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/contents/js/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marriage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/marriage/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reception/contents/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/reception/contents/js/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wedding/contents/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/contents/js/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wedding/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/wedding/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +134,7 @@
       <workItem from="1703141259404" duration="4026000" />
       <workItem from="1704156360701" duration="601000" />
       <workItem from="1704260175145" duration="3389000" />
-      <workItem from="1704904774697" duration="6994000" />
+      <workItem from="1704904774697" duration="9623000" />
     </task>
     <servers />
   </component>

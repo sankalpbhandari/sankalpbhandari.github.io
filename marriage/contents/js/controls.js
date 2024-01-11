@@ -1,4 +1,3 @@
-import user from "./../../../names.json" assert { type: 'json' };
 let played = 0;
 $(function () {
     $('div.nav a').bind('click', function (event) {
@@ -22,8 +21,8 @@ $(function () {
 });
 
 (function ($) {
-    $(document).ready(function () {
-
+    $(document).ready(async function () {
+        let user = await getNames();
         let param = null;
         let searchParams = new URLSearchParams(window.location.search)
         if (searchParams.has('q')) {
@@ -95,4 +94,12 @@ function disableMute() {
         audio.muted = false;
         audio.play();
     }
+}
+
+async function getNames() {
+    let data;
+    const response = await  fetch("./../../../names.json")
+    data = await response.json();
+    console.log(data)
+    return data;
 }
