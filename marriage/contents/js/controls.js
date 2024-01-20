@@ -82,12 +82,6 @@ window.addEventListener("touchstart", () => {
 })
 
 function disableMute() {
-    let video = document.getElementById("video");
-    video.play();
-    video.play();
-    video.play();
-    video.play();
-    video.play();
     let audio = document.getElementById("audio");
     if (audio && played <= 3) {
         audio.muted = false;
