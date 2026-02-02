@@ -54,6 +54,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo.jpeg">
     <link rel="apple-touch-icon" href="images/logo.jpeg">
     
+    <!-- Web App Manifest for PWA support -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Resource Hints for Performance -->
+    <!-- Preconnect to external resources we'll need early -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- DNS Prefetch for resources loaded later -->
+    <link rel="dns-prefetch" href="https://github-readme-stats.vercel.app">
+    <link rel="dns-prefetch" href="https://github-readme-streak-stats.herokuapp.com">
+    <link rel="dns-prefetch" href="https://ghchart.rshah.org">
+    <link rel="dns-prefetch" href="https://api.github.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
+    
+    <!-- Preload critical above-the-fold resources -->
+    <link rel="preload" href="images/utdallas_blur.jpg" as="image">
+    <link rel="preload" href="images/me-v2.jpg" as="image">
+    <link rel="preload" href="styles.css" as="style">
+    
     <!-- Structured Data - JSON-LD -->
     <script type="application/ld+json">
     {
@@ -179,7 +199,7 @@
 
 <header id='header' class="col-12" role="banner">
     <div id='header-inner' class="header-entrance">
-        <img src='images/me-v2.jpg' class='rounded-circle img-me' alt="Sankalp Bhandari - Software Development Engineer at AWS">
+        <img src='images/me-v2.jpg' class='rounded-circle img-me' alt="Sankalp Bhandari - Software Development Engineer at AWS" width="200" height="200" fetchpriority="high">
         <div class='header-text'>
             <h1 class='header-text-name'>
                 &#x0073;&#x03b1;&#x03b7;&#x043a;&#x03b1;&#x2113;&#x03c1 &#x0432;&#x043d;&#x03b1;&#x03b7;&#x2202;&#x03b1;&#x044f;&#x03b9
@@ -686,11 +706,13 @@
                          alt="GitHub Stats" 
                          class="github-stat-img light-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <img src="https://github-readme-stats.vercel.app/api?username=sankalpbhandari&show_icons=true&theme=dark&hide_border=true&bg_color=1e1e1e&title_color=e0e0e0&text_color=b0b0b0&icon_color=ffb400" 
                          alt="GitHub Stats" 
                          class="github-stat-img dark-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <div class="stat-fallback">
                         <i class="fas fa-chart-bar"></i>
@@ -704,11 +726,13 @@
                          alt="Top Languages" 
                          class="github-stat-img light-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sankalpbhandari&layout=compact&theme=dark&hide_border=true&bg_color=1e1e1e&title_color=e0e0e0&text_color=b0b0b0" 
                          alt="Top Languages" 
                          class="github-stat-img dark-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <div class="stat-fallback">
                         <i class="fas fa-code"></i>
@@ -724,11 +748,13 @@
                          alt="GitHub Streak" 
                          class="github-stat-img light-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <img src="https://github-readme-streak-stats.herokuapp.com/?user=sankalpbhandari&theme=dark&hide_border=true&background=1e1e1e&ring=ffb400&fire=ffb400&currStreakLabel=e0e0e0" 
                          alt="GitHub Streak" 
                          class="github-stat-img dark-mode-img"
                          loading="lazy"
+                         decoding="async"
                          onerror="this.parentElement.classList.add('stat-error')">
                     <div class="stat-fallback">
                         <i class="fas fa-fire-alt"></i>
@@ -775,6 +801,7 @@
                      alt="GitHub Contribution Graph" 
                      class="github-contribution-graph"
                      loading="lazy"
+                     decoding="async"
                      onerror="this.parentElement.classList.add('contribution-error')">
                 <div class="contribution-fallback">
                     <i class="fas fa-calendar-check"></i>
@@ -805,7 +832,8 @@
                         <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/sde.jpeg"
-                                     alt="Software Development Engineer at Amazon">
+                                     alt="Software Development Engineer at Amazon"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -830,7 +858,8 @@
                         <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/sdeintern.jpg"
-                                     alt="SDE Intern at Amazon Web Services">
+                                     alt="SDE Intern at Amazon Web Services"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -856,7 +885,8 @@
                         <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/PSSA.jpg"
-                                     alt="PS Security Analyst at UT Dallas">
+                                     alt="PS Security Analyst at UT Dallas"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -881,7 +911,8 @@
                         <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/TA.jpg"
-                                     alt="Teaching Assistant at UT Dallas Computer Science Department">
+                                     alt="Teaching Assistant at UT Dallas Computer Science Department"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -901,7 +932,8 @@
                         <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/ssb.jpg"
-                                     alt="Masters in Computer Science at UT Dallas">
+                                     alt="Masters in Computer Science at UT Dallas"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -929,7 +961,8 @@
                         <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/softwaredev.jpg"
-                                     alt="Software Engineer at GS Lab">
+                                     alt="Software Engineer at GS Lab"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -953,7 +986,8 @@
                         <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/mitpune-wpu.jpg"
-                                     alt="Bachelor's degree from Maharashtra Institute of Technology, Pune">
+                                     alt="Bachelor's degree from Maharashtra Institute of Technology, Pune"
+                                     width="170" height="170" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -1405,10 +1439,10 @@
     </div>
 </footer>
 
-<!-- Bootstrap 5.3 JS Bundle (includes Popper) -->
+<!-- Bootstrap 5.3 JS Bundle (includes Popper) - Deferred for performance -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous" defer></script>
 
 <!-- Theme Toggle Script -->
 <script>
@@ -1959,6 +1993,21 @@
         fetchRepos();
     }
 })();
+</script>
+
+<!-- Service Worker Registration for Offline Support & Caching -->
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registered with scope:', registration.scope);
+            })
+            .catch(function(error) {
+                console.log('ServiceWorker registration failed:', error);
+            });
+    });
+}
 </script>
 </body>
 </html>

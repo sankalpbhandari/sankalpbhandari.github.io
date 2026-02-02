@@ -1,0 +1,26 @@
+{
+  "name": "Sankalp Bhandari Portfolio",
+  "short_name": "Sankalp B",
+  "description": "Personal portfolio website of Sankalp Bhandari, Software Development Engineer at AWS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fff4",
+  "theme_color": "#ffb400",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["portfolio", "personal", "technology"],
+  "lang": "en-US",
+  "prefer_related_applications": false
+}

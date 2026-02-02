@@ -4320,3 +4320,83 @@ button:focus,
     background-color: var(--color-primary);
   }
 }
+
+/* ============================================
+   16. Performance Optimizations
+   ============================================ */
+
+/* Content visibility for off-screen sections - improves initial render */
+section:not(#header):not(#about) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Contain property for better paint performance on cards */
+.project-card,
+.blog-card,
+.testimonial-card,
+.skill-category,
+.github-stat-card,
+.github-repo-card {
+  contain: content;
+}
+
+/* Optimize images for rendering */
+img {
+  content-visibility: auto;
+}
+
+/* Timeline images container - prevent layout shift */
+.timeline-image {
+  contain: layout style;
+  aspect-ratio: 1 / 1;
+}
+
+/* Ensure timeline images maintain aspect ratio */
+.timeline-image img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Profile image - prevent layout shift */
+.img-me {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Will-change hints for animated elements */
+.theme-toggle,
+.project-card,
+.blog-card,
+.testimonial-card,
+.skill-category,
+.social-buttons a,
+.btn {
+  will-change: transform;
+}
+
+/* Remove will-change after animation completes (via transition end) */
+.is-visible {
+  will-change: auto;
+}
+
+/* GPU acceleration for smooth animations */
+.animate-on-scroll {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize font loading */
+.header-text-name,
+h1, h2, h3, h4, h5, h6 {
+  font-display: swap;
+}
+
+/* Reduce layout shifts for external images */
+.github-stat-img {
+  min-height: 150px;
+}
+
+.github-contribution-graph {
+  min-height: 100px;
+}
