@@ -65,7 +65,7 @@
       "category": "Design System",
       "description": "Improve mobile responsiveness across all sections. Ensure the site looks great on all device sizes with proper breakpoints, flexible layouts, and touch-friendly interactions.",
       "priority": 4,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Audit current responsive issues (fixed widths, header positioning, timeline layout)",
