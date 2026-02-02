@@ -1,0 +1,12 @@
+# robots.txt for sankalpbhandari.github.io
+# Generated for SEO optimization
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sankalpbhandari.github.io/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading the server)
+Crawl-delay: 10

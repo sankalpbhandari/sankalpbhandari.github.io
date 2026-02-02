@@ -440,10 +440,14 @@ section h3.section-subheading {
 .header-text-name {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-hero);
+  margin: 0;
+  /* Reset h1 default margins for consistent styling */
 }
 
 .header-text-email {
   font-size: var(--font-size-xl);
+  margin: 0;
+  /* Reset p default margins for consistent styling */
 }
 
 .header-text-desc {
@@ -2290,6 +2294,14 @@ section h3.section-subheading {
 .timeline .timeline-heading h4 {
   margin-top: 0;
   color: inherit;
+}
+
+.timeline .timeline-heading h3.timeline-date {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  color: inherit;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
 }
 
 .timeline .timeline-heading h4.subheading {
