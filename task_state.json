@@ -83,7 +83,7 @@
       "category": "UX Enhancements",
       "description": "Add smooth animations and transitions for scroll effects, hover states, and page elements. Implement subtle animations that enhance UX without being distracting.",
       "priority": 5,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Add CSS transitions for hover effects on buttons, links, and cards",

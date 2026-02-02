@@ -46,7 +46,7 @@
 </button>
 
 <div id='header' class="col-12">
-    <div id='header-inner'>
+    <div id='header-inner' class="header-entrance">
         <img src='images/me-v2.jpg' class='rounded-circle img-me' alt="my_image">
         <div class='header-text'>
             <div class='header-text-name'>
@@ -83,13 +83,13 @@
 <div class='container'>
     <div class='col-12'>
         <div class='row'>
-            <h3 class="text-center w-100">About Me</h3></div>
-        <div class="well">
+            <h3 class="text-center w-100 animate-on-scroll">About Me</h3></div>
+        <div class="well animate-on-scroll animate-delay-100">
             <p class="mb-2 text-center">I am a <strong>Designer</strong> of an everyday thing
                 called <strong>Life</strong>. I design
                 thinking of making a difference.</p>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 animate-on-scroll animate-delay-200">
             <h4>Skills</h4>
             <div class="row">
                 <div class="col-12 col-sm-4 col-md-3">
@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 animate-on-scroll animate-delay-300">
 
             <h4>Personality</h4>
 
@@ -200,13 +200,13 @@
 
         </div>
         <div class="col-12">
-            <h3 class="text-center pt-4">My Timeline</h3>
+            <h3 class="text-center pt-4 animate-on-scroll">My Timeline</h3>
         </div>
         <div class='row vspace-bottom' style="clear:both;">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <li>
+                        <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/sde.jpeg"
                                      alt="SDE Intern at Amazon">
@@ -231,7 +231,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
+                        <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/sdeintern.jpg"
                                      alt="SDE Intern at Amazon">
@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/PSSA.jpg"
                                      alt="PS Security Analyst">
@@ -282,7 +282,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
+                        <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/TA.jpg"
                                      alt="Grader for CS Dept">
@@ -302,7 +302,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/ssb.jpg"
                                      alt="University of Texas at Dallas">
@@ -330,7 +330,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
+                        <li class="timeline-inverted animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/softwaredev.jpg"
                                      alt="Software Engineer">
@@ -354,7 +354,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li class="animate-on-scroll">
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="images/mitpune-wpu.jpg"
                                      alt="MIT, Pune">
@@ -471,6 +471,83 @@
     const currentTheme = getCurrentTheme();
     const label = currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
     themeToggle.setAttribute('aria-label', label);
+})();
+</script>
+
+<!-- Scroll Animation Observer Script -->
+<script>
+(function() {
+    'use strict';
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+        // If user prefers reduced motion, make all elements visible immediately
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+            el.classList.add('is-visible');
+        });
+        return;
+    }
+    
+    // Intersection Observer options
+    const observerOptions = {
+        root: null, // Use viewport as root
+        rootMargin: '0px 0px -50px 0px', // Trigger slightly before element enters viewport
+        threshold: 0.1 // Trigger when 10% of element is visible
+    };
+    
+    // Callback function for Intersection Observer
+    function handleIntersection(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Add visible class to trigger animation
+                entry.target.classList.add('is-visible');
+                // Stop observing this element (animation only happens once)
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+    
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+        observer.observe(el);
+    });
+    
+    // Animate progress bars when they come into view
+    const progressObserverOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+    
+    function handleProgressIntersection(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+    
+    const progressObserver = new IntersectionObserver(handleProgressIntersection, progressObserverOptions);
+    
+    document.querySelectorAll('.progress-bar').forEach(function(el) {
+        progressObserver.observe(el);
+    });
+    
+    // Listen for reduced motion preference changes
+    window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function(e) {
+        if (e.matches) {
+            // User enabled reduced motion, make all remaining elements visible
+            document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach(function(el) {
+                el.classList.add('is-visible');
+            });
+        }
+    });
 })();
 </script>
 </body>

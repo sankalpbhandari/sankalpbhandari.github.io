@@ -17,6 +17,8 @@
    11. Utility Classes
    12. Media Queries
    13. Dark Mode Specific Overrides
+   14. Animations & Transitions
+   15. Reduced Motion - Accessibility
 
    ============================================ */
 
@@ -1630,19 +1632,423 @@ figcaption {
   color: #121212;
 }
 
-/* Reduced motion preference - disable theme transition animations */
+/* ============================================
+   14. Animations & Transitions
+   ============================================ */
+
+/* Keyframes - Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keyframes - Slide Up with Fade */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes - Slide In from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes - Slide In from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes - Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Keyframes - Pulse (for attention) */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Keyframes - Progress bar fill */
+@keyframes progressFill {
+  from {
+    width: 0;
+  }
+}
+
+/* Keyframes - Float subtle */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Base animation class - hidden by default */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+/* When element is visible */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation delay classes */
+.animate-delay-100 { transition-delay: 0.1s; }
+.animate-delay-200 { transition-delay: 0.2s; }
+.animate-delay-300 { transition-delay: 0.3s; }
+.animate-delay-400 { transition-delay: 0.4s; }
+.animate-delay-500 { transition-delay: 0.5s; }
+.animate-delay-600 { transition-delay: 0.6s; }
+
+/* Entrance animation for header */
+.header-entrance {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.header-entrance .img-me {
+  animation: scaleIn 0.6s ease-out 0.2s both;
+}
+
+.header-entrance .header-text-name {
+  animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+.header-entrance .header-text-email {
+  animation: slideUp 0.6s ease-out 0.5s both;
+}
+
+.header-entrance .social-buttons {
+  animation: slideUp 0.6s ease-out 0.6s both;
+}
+
+/* Timeline item animations */
+.timeline > li.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.timeline > li.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline > li:nth-child(odd).animate-on-scroll {
+  transform: translateX(-30px) translateY(20px);
+}
+
+.timeline > li:nth-child(odd).animate-on-scroll.is-visible {
+  transform: translateX(0) translateY(0);
+}
+
+.timeline > li:nth-child(even).animate-on-scroll {
+  transform: translateX(30px) translateY(20px);
+}
+
+.timeline > li:nth-child(even).animate-on-scroll.is-visible {
+  transform: translateX(0) translateY(0);
+}
+
+/* Timeline image animation */
+.timeline > li .timeline-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline > li:hover .timeline-image {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline panel hover effect */
+.timeline > li .timeline-panel {
+  transition: transform 0.3s ease;
+}
+
+.timeline > li:hover .timeline-panel {
+  transform: translateX(5px);
+}
+
+.timeline > li.timeline-inverted:hover .timeline-panel {
+  transform: translateX(-5px);
+}
+
+/* Mobile: remove hover transforms for timeline */
+@media (max-width: 767.98px) {
+  .timeline > li:hover .timeline-panel,
+  .timeline > li.timeline-inverted:hover .timeline-panel {
+    transform: none;
+  }
+  
+  .timeline > li:nth-child(odd).animate-on-scroll,
+  .timeline > li:nth-child(even).animate-on-scroll {
+    transform: translateY(30px);
+  }
+  
+  .timeline > li:nth-child(odd).animate-on-scroll.is-visible,
+  .timeline > li:nth-child(even).animate-on-scroll.is-visible {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Social Button Hover Effects */
+ul.social-buttons li a {
+  transition: transform 0.3s ease, 
+              background-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+ul.social-buttons li a:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Social button icon animation */
+ul.social-buttons li a i {
+  transition: transform 0.3s ease;
+}
+
+ul.social-buttons li a:hover i {
+  transform: scale(1.1);
+}
+
+/* Link hover animations - underline effect */
+.timeline-body a,
+.container a:not(.social-buttons a):not(.footer-address):not(.quicklinks a) {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.timeline-body a:hover,
+.container a:not(.social-buttons a):not(.footer-address):not(.quicklinks a):hover {
+  background-size: 100% 1px;
+}
+
+/* Button hover effects */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Progress bar animation */
+.progress-bar {
+  transition: width 1s ease-out;
+}
+
+.progress-bar.animate {
+  animation: progressFill 1.5s ease-out forwards;
+}
+
+/* Well/Card hover effect */
+.well {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.well:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Section heading animation */
+h3.text-center.animate-on-scroll,
+h4.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+h3.text-center.animate-on-scroll.is-visible,
+h4.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile image subtle hover effect */
+.img-me {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-me:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer links hover effect */
+.footer-address,
+.quicklinks a {
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-address:hover,
+.quicklinks a:hover {
+  transform: translateX(3px);
+}
+
+/* Theme toggle animation enhancement */
+.theme-toggle {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Skills list item animation */
+.col-md-6 .row {
+  transition: transform 0.3s ease;
+}
+
+.col-md-6 .row:hover {
+  transform: translateX(5px);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus state animations for accessibility */
+a:focus,
+button:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.5);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Stagger animation for list items */
+.social-buttons li:nth-child(1) a { transition-delay: 0.05s; }
+.social-buttons li:nth-child(2) a { transition-delay: 0.1s; }
+.social-buttons li:nth-child(3) a { transition-delay: 0.15s; }
+.social-buttons li:nth-child(4) a { transition-delay: 0.2s; }
+.social-buttons li:nth-child(5) a { transition-delay: 0.25s; }
+.social-buttons li:nth-child(6) a { transition-delay: 0.3s; }
+
+/* ============================================
+   15. Reduced Motion - Accessibility
+   ============================================ */
 @media (prefers-reduced-motion: reduce) {
-  body,
-  body *:not(.theme-toggle):not(.theme-toggle *) {
+  /* Disable all animations and transitions */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Reset animation classes */
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
     transition: none !important;
   }
   
-  .theme-toggle {
-    transition: none !important;
+  .header-entrance,
+  .header-entrance .img-me,
+  .header-entrance .header-text-name,
+  .header-entrance .header-text-email,
+  .header-entrance .social-buttons {
+    animation: none !important;
+    opacity: 1 !important;
   }
   
+  /* Remove hover transforms */
+  .theme-toggle:hover,
+  ul.social-buttons li a:hover,
+  .timeline > li:hover .timeline-image,
+  .timeline > li:hover .timeline-panel,
+  .well:hover,
+  .img-me:hover,
+  .btn:hover,
+  .footer-address:hover,
+  .quicklinks a:hover {
+    transform: none !important;
+  }
+  
+  /* Keep color transitions for theme switching */
+  .theme-toggle,
   .theme-toggle .icon-sun,
   .theme-toggle .icon-moon {
     transition: none !important;
+  }
+  
+  /* Keep basic state changes without animation */
+  a:hover {
+    color: var(--color-text-link-hover);
+  }
+  
+  ul.social-buttons li a:hover {
+    background-color: var(--color-primary);
   }
 }
