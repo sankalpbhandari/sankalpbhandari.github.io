@@ -120,6 +120,7 @@
       "description": "Create a blog section structure. Set up the foundation for blog posts with a posts listing page and individual post layout.",
       "priority": 7,
       "status": "pending",
+      "notes": "Skipped - implementing FEAT-008 (Skills Visualization) as requested by user",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Create /blog/ directory structure",
@@ -137,7 +138,7 @@
       "category": "Content Sections",
       "description": "Update skills visualization with modern progress bars, categorized skill cards, or visual charts instead of simple text lists.",
       "priority": 8,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Redesign skills section layout with categorized skill cards",

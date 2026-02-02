@@ -459,7 +459,275 @@ section h3.section-subheading {
 /* ============================================
    7. Skills Section
    ============================================ */
-/* Progress Bars */
+/* New Skills Visualization */
+.skills-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-body);
+}
+
+/* Skills Grid - Responsive 4-column layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+/* Skill Category Card */
+.skill-category {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border: 1px solid var(--color-border-light);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Category Header */
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.skill-category-icon {
+  font-size: var(--font-size-2xl);
+  color: var(--color-accent);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 180, 0, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: 0;
+}
+
+.skill-category-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-family-headings);
+}
+
+/* Skill Items List */
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Individual Skill Item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.skill-info i {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  width: 24px;
+  text-align: center;
+  padding: 0;
+  transition: color var(--transition-base);
+}
+
+.skill-item:hover .skill-info i {
+  color: var(--color-accent);
+}
+
+.skill-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* Skill Progress Bar */
+.skill-bar {
+  height: 8px;
+  background-color: var(--color-bg-muted);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #ffc233 100%);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+/* Animated progress when visible */
+.skill-progress.animate {
+  width: var(--progress-width, 0%);
+}
+
+/* Shimmer effect on progress bar */
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dark mode - Skills Section */
+[data-theme="dark"] .skills-section {
+  background-color: var(--color-bg-body);
+}
+
+[data-theme="dark"] .skill-category {
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .skill-category-icon {
+  background-color: rgba(255, 180, 0, 0.15);
+}
+
+[data-theme="dark"] .skill-bar {
+  background-color: #3d3d3d;
+}
+
+[data-theme="dark"] .skill-name {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .skill-info i {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .skill-item:hover .skill-info i {
+  color: var(--color-accent);
+}
+
+/* Skills Section - Responsive */
+@media (max-width: 575.98px) {
+  .skills-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .skill-category {
+    padding: var(--spacing-md);
+  }
+  
+  .skill-category-header {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .skill-category-icon {
+    font-size: var(--font-size-xl);
+    width: 36px;
+    height: 36px;
+  }
+  
+  .skill-category-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .skill-items {
+    gap: var(--spacing-sm);
+  }
+  
+  .skill-name {
+    font-size: var(--font-size-sm);
+  }
+  
+  .skill-bar {
+    height: 6px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: var(--spacing-xl) auto 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Skill Card Animation on Scroll */
+.skill-category.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.skill-category.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger animation for skill categories */
+.skill-category:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
+.skill-category:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
+.skill-category:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
+.skill-category:nth-child(4).animate-on-scroll { transition-delay: 0.4s; }
+
+/* Legacy Progress Bars (for Personality section) */
 .progress {
   height: 15px;
   background-color: var(--color-border);
