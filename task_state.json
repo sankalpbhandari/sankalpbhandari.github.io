@@ -47,7 +47,7 @@
       "category": "Design System",
       "description": "Implement dark mode with theme toggle and modernize typography/visual hierarchy. Define light and dark color palettes using CSS variables, add a theme toggle button, and update fonts for better readability.",
       "priority": 3,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Define CSS custom properties for light theme (--color-bg, --color-text, --color-primary, --color-secondary, etc.)",

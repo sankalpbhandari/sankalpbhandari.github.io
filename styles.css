@@ -4,7 +4,8 @@
    
    Table of Contents:
    1. CSS Custom Properties (Design System)
-   2. Base Styles
+   1b. Dark Theme Variables
+   2. Base Styles & Theme Toggle
    3. Typography
    4. Layout
    5. Header Section
@@ -15,6 +16,7 @@
    10. Components (Buttons, Progress Bars, Social)
    11. Utility Classes
    12. Media Queries
+   13. Dark Mode Specific Overrides
 
    ============================================ */
 
@@ -36,6 +38,7 @@
   --color-bg-white: #ffffff;
   --color-bg-muted: #f1f1f1;
   --color-bg-header: rgba(0, 0, 0, 0.5);
+  --color-bg-card: #ffffff;
   
   /* Colors - Text */
   --color-text-primary: #333333;
@@ -52,8 +55,8 @@
   --color-border-image: #aaaaaa;
   
   /* Typography - Font Families */
-  --font-family-base: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-family-headings: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-base: 'Inter', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-headings: 'Poppins', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   
   /* Typography - Font Sizes */
   --font-size-base: 16px;
@@ -68,6 +71,7 @@
   /* Typography - Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
   
   /* Typography - Line Heights */
@@ -99,12 +103,14 @@
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+  --transition-theme: 0.4s ease;
   
   /* Z-Index Scale */
   --z-index-dropdown: 100;
   --z-index-sticky: 500;
   --z-index-fixed: 1000;
   --z-index-modal: 1050;
+  --z-index-theme-toggle: 1100;
   
   /* Component Specific */
   --header-height: 360px;
@@ -116,6 +122,46 @@
   --timeline-border-width: 7px;
   --social-button-size: 40px;
   --profile-image-size: 200px;
+}
+
+/* ============================================
+   Dark Theme Variables
+   ============================================ */
+[data-theme="dark"] {
+  /* Colors - Primary Palette (Dark Mode) */
+  --color-primary: #ffffff;
+  --color-primary-hover: #e0e0e0;
+  --color-accent: #ffb400;
+  --color-accent-hover: #ffc233;
+  --color-danger: #ff6b6b;
+  
+  /* Colors - Background (Dark Mode) */
+  --color-bg-body: #121212;
+  --color-bg-light: #1e1e1e;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-white: #1e1e1e;
+  --color-bg-muted: #2d2d2d;
+  --color-bg-header: rgba(0, 0, 0, 0.7);
+  --color-bg-card: #1e1e1e;
+  
+  /* Colors - Text (Dark Mode) */
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #888888;
+  --color-text-headings: #d0d0d0;
+  --color-text-light: #ffffff;
+  --color-text-link: #ffffff;
+  --color-text-link-hover: #ffb400;
+  
+  /* Colors - Borders (Dark Mode) */
+  --color-border: #3d3d3d;
+  --color-border-light: #2d2d2d;
+  --color-border-image: #555555;
+  
+  /* Shadows (Dark Mode) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================
@@ -143,6 +189,94 @@ body {
   color: var(--color-text-secondary);
   background-color: var(--color-bg-body);
   -webkit-tap-highlight-color: var(--color-primary);
+  /* Smooth transition for theme changes */
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+/* Theme Transition - apply to key elements */
+body *:not(.theme-toggle):not(.theme-toggle *) {
+  transition: background-color var(--transition-theme), 
+              color var(--transition-theme), 
+              border-color var(--transition-theme),
+              box-shadow var(--transition-theme);
+}
+
+/* ============================================
+   Theme Toggle Button
+   ============================================ */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: var(--z-index-theme-toggle);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Icon transitions */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle .icon-sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.theme-toggle .icon-moon {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+/* Dark mode specific toggle styling */
+[data-theme="dark"] .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Selection Styling */
@@ -720,8 +854,16 @@ i {
   background-color: var(--color-bg-light);
 }
 
+[data-theme="dark"] .bg-light-gray {
+  background-color: var(--color-bg-light);
+}
+
 .bg-light-yellow {
   background-color: #FFEDC2 !important;
+}
+
+[data-theme="dark"] .bg-light-yellow {
+  background-color: #3d3520 !important;
 }
 
 .bg-darkest-gray {
@@ -945,5 +1087,85 @@ figcaption {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+}
+
+/* ============================================
+   13. Dark Mode Specific Overrides
+   ============================================ */
+
+/* Dark mode - Social buttons need better contrast in footer */
+[data-theme="dark"] footer ul.social-buttons li a {
+  background-color: #444444;
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] footer ul.social-buttons li a:hover,
+[data-theme="dark"] footer ul.social-buttons li a:focus {
+  background-color: var(--color-accent);
+  color: #121212;
+}
+
+/* Dark mode - Timeline image border visibility */
+[data-theme="dark"] .timeline > li .timeline-image {
+  border-color: #444444;
+}
+
+/* Dark mode - Progress bar track */
+[data-theme="dark"] .progress {
+  background-color: #3d3d3d;
+}
+
+/* Dark mode - Well/cards need better contrast */
+[data-theme="dark"] .well {
+  background-color: var(--color-bg-muted);
+  border: 1px solid var(--color-border);
+}
+
+/* Dark mode - Links in content areas */
+[data-theme="dark"] .timeline-body a,
+[data-theme="dark"] .container a {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .timeline-body a:hover,
+[data-theme="dark"] .container a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* Dark mode - Subheading text */
+[data-theme="dark"] .timeline-heading h4.subheading {
+  color: var(--color-text-secondary);
+}
+
+/* Dark mode - Header social buttons remain the same (white on dark background) */
+#header ul.social-buttons li a {
+  background-color: var(--color-text-headings);
+}
+
+[data-theme="dark"] #header ul.social-buttons li a {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] #header ul.social-buttons li a:hover {
+  background-color: var(--color-accent);
+  color: #121212;
+}
+
+/* Reduced motion preference - disable theme transition animations */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body *:not(.theme-toggle):not(.theme-toggle *) {
+    transition: none !important;
+  }
+  
+  .theme-toggle {
+    transition: none !important;
+  }
+  
+  .theme-toggle .icon-sun,
+  .theme-toggle .icon-moon {
+    transition: none !important;
   }
 }
