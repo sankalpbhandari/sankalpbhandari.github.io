@@ -13,6 +13,7 @@
    7. Skills Section
    7b. Projects Section
    7c. Blog Section
+   7d. Testimonials Section
    8. Timeline Section
    9. Footer
    10. Components (Buttons, Progress Bars, Social)
@@ -1407,6 +1408,273 @@ section h3.section-subheading {
 .blog-card:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
 .blog-card:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
 .blog-card:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
+
+/* ============================================
+   7d. Testimonials Section
+   ============================================ */
+.testimonials-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid var(--color-border-light);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Quote Icon */
+.testimonial-quote-icon {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  font-size: 3rem;
+  color: var(--color-accent);
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.testimonial-quote-icon i {
+  padding: 0;
+}
+
+/* Testimonial Content */
+.testimonial-content {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-text {
+  font-size: var(--font-size-base);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+/* Testimonial Author Section */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: auto;
+}
+
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-full);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ffc233 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonial-avatar i {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-family-headings);
+}
+
+.testimonial-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.testimonial-company {
+  font-size: 12px;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Dark Mode - Testimonials Section */
+[data-theme="dark"] .testimonials-section {
+  background-color: var(--color-bg-body);
+}
+
+[data-theme="dark"] .testimonial-card {
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .testimonial-quote-icon {
+  color: var(--color-accent);
+  opacity: 0.2;
+}
+
+[data-theme="dark"] .testimonial-text {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .testimonial-author {
+  border-top-color: var(--color-border);
+}
+
+[data-theme="dark"] .testimonial-avatar {
+  background: linear-gradient(135deg, #2d2d2d 0%, #444444 100%);
+}
+
+[data-theme="dark"] .testimonial-avatar i {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .testimonial-name {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .testimonial-role {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .testimonial-company {
+  color: var(--color-accent);
+}
+
+/* Testimonials Section - Responsive */
+@media (max-width: 575.98px) {
+  .testimonials-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .testimonial-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .testimonial-quote-icon {
+    font-size: 2rem;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+  
+  .testimonial-text {
+    font-size: var(--font-size-sm);
+    line-height: 1.65;
+  }
+  
+  .testimonial-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .testimonial-avatar i {
+    font-size: 2rem;
+  }
+  
+  .testimonial-name {
+    font-size: var(--font-size-sm);
+  }
+  
+  .testimonial-role,
+  .testimonial-company {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-xl);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* Make 3rd card span full width when 2 columns */
+  .testimonial-card:nth-child(3) {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .testimonial-card:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* Testimonial Card Animation on Scroll */
+.testimonial-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.testimonial-card.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger animation for testimonial cards */
+.testimonial-card:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
+.testimonial-card:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
+.testimonial-card:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
 
 /* ============================================
    8. Timeline Section
@@ -2990,7 +3258,8 @@ button:focus,
   .project-card:hover,
   .project-link:hover,
   .blog-card:hover,
-  .blog-read-more:hover i {
+  .blog-read-more:hover i,
+  .testimonial-card:hover {
     transform: none !important;
   }
   
