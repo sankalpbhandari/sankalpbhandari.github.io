@@ -12,6 +12,7 @@
    6. About Section
    7. Skills Section
    7b. Projects Section
+   7c. Blog Section
    8. Timeline Section
    9. Footer
    10. Components (Buttons, Progress Bars, Social)
@@ -1063,6 +1064,349 @@ section h3.section-subheading {
     height: 160px;
   }
 }
+
+/* ============================================
+   7c. Blog Section
+   ============================================ */
+.blog-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-body);
+}
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Blog Card */
+.blog-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Blog Card Image/Icon Area */
+.blog-card-image {
+  position: relative;
+  height: 160px;
+  background: linear-gradient(135deg, #1a365d 0%, #2a4a7f 50%, #3182ce 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.blog-icon {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.15);
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.blog-card:hover .blog-icon {
+  transform: scale(1.1);
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Blog Category Tag */
+.blog-category {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-bg-dark);
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Blog Card Content */
+.blog-card-content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blog Meta (date, read time) */
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-date,
+.blog-read-time {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-date i,
+.blog-read-time i {
+  font-size: 12px;
+  padding: 0;
+}
+
+/* Blog Title */
+.blog-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-headings);
+  line-height: 1.4;
+  transition: color var(--transition-base);
+}
+
+.blog-card:hover .blog-title {
+  color: var(--color-accent);
+}
+
+/* Blog Excerpt */
+.blog-excerpt {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Read More Link */
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: gap var(--transition-base), color var(--transition-base);
+  margin-top: auto;
+}
+
+.blog-read-more:hover {
+  gap: var(--spacing-sm);
+  color: var(--color-accent-hover);
+}
+
+.blog-read-more i {
+  font-size: 12px;
+  padding: 0;
+  transition: transform var(--transition-base);
+}
+
+.blog-read-more:hover i {
+  transform: translateX(3px);
+}
+
+/* Coming Soon Indicator */
+.blog-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-muted);
+  border-radius: var(--border-radius-md);
+}
+
+.blog-coming-soon i {
+  color: var(--color-accent);
+  padding: 0;
+  animation: writeAnimation 2s ease-in-out infinite;
+}
+
+@keyframes writeAnimation {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Blog Links Container */
+.blog-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.blog-links .btn-outline-primary {
+  min-width: 120px;
+}
+
+/* Dark Mode - Blog Section */
+[data-theme="dark"] .blog-section {
+  background-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .blog-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .blog-card-image {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1f3460 100%);
+}
+
+[data-theme="dark"] .blog-icon {
+  color: rgba(255, 180, 0, 0.2);
+}
+
+[data-theme="dark"] .blog-card:hover .blog-icon {
+  color: rgba(255, 180, 0, 0.35);
+}
+
+[data-theme="dark"] .blog-category {
+  background-color: var(--color-accent);
+  color: #121212;
+}
+
+[data-theme="dark"] .blog-title {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .blog-card:hover .blog-title {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .blog-read-more {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .blog-read-more:hover {
+  color: var(--color-accent-hover);
+}
+
+[data-theme="dark"] .blog-coming-soon {
+  background-color: #2d2d2d;
+  color: var(--color-text-muted);
+}
+
+/* Blog Section - Responsive */
+@media (max-width: 575.98px) {
+  .blog-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .blog-card-image {
+    height: 140px;
+  }
+  
+  .blog-icon {
+    font-size: 3rem;
+  }
+  
+  .blog-card-content {
+    padding: var(--spacing-md);
+  }
+  
+  .blog-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .blog-meta {
+    gap: var(--spacing-sm);
+  }
+  
+  .blog-coming-soon {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+  
+  .blog-links {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .blog-links .btn-outline-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto var(--spacing-xl);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* Make 3rd card span full width when 2 columns */
+  .blog-card:nth-child(3) {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .blog-card:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* Blog Card Animation on Scroll */
+.blog-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.blog-card.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger animation for blog cards */
+.blog-card:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
+.blog-card:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
+.blog-card:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
 
 /* ============================================
    8. Timeline Section
@@ -2644,12 +2988,20 @@ button:focus,
   .footer-address:hover,
   .quicklinks a:hover,
   .project-card:hover,
-  .project-link:hover {
+  .project-link:hover,
+  .blog-card:hover,
+  .blog-read-more:hover i {
     transform: none !important;
   }
   
   /* Project cards - no icon animation */
   .project-card:hover .project-icon {
+    animation: none !important;
+  }
+  
+  /* Blog cards - no icon animation */
+  .blog-card:hover .blog-icon,
+  .blog-coming-soon i {
     animation: none !important;
   }
   
