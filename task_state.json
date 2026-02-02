@@ -1,0 +1,280 @@
+{
+  "task_id": "task-20260202-1756",
+  "task_description": "Comprehensive portfolio website overhaul for sankalpbhandari.github.io. The site is currently a single-page HTML/CSS/JS portfolio using Bootstrap 4 and jQuery. This overhaul will: (1) Remove personal event pages (wedding/marriage/reception/NamingCeremony), (2) Modernize design with dark mode, better typography, and animations, (3) Add new sections (projects showcase, blog, testimonials, contact form), (4) Improve SEO and performance, (5) Integrate GitHub activity display, and (6) Clean up code and documentation. Decision: Staying with HTML/CSS/JS stack (upgrading to Bootstrap 5 with CSS variables for theming) rather than migrating to a framework, as this keeps the site simple, fast, and maintainable for a personal portfolio.",
+  "status": "in_progress",
+  "settings": {
+    "target_branch": "main",
+    "create_pr": true
+  },
+  "features": [
+    {
+      "id": "FEAT-001",
+      "category": "Cleanup",
+      "description": "Remove all personal event pages (wedding, marriage, reception, NamingCeremony) including directories and related JSON files (event.json, names.json). This will free up ~73MB of space and remove unrelated content from the portfolio.",
+      "priority": 1,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Delete /wedding/ directory and all contents",
+        "Delete /marriage/ directory and all contents",
+        "Delete /reception/ directory and all contents",
+        "Delete /NamingCeremony/ directory and all contents",
+        "Delete event.json and names.json files",
+        "Search index.html for any links to these pages and remove them",
+        "Verify no broken references remain"
+      ]
+    },
+    {
+      "id": "FEAT-002",
+      "category": "Foundation",
+      "description": "Upgrade dependencies and restructure CSS architecture. Migrate from Bootstrap 4 + jQuery to Bootstrap 5 (no jQuery dependency). Consolidate and reorganize CSS files with CSS custom properties (variables) for theming support.",
+      "priority": 2,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Update Bootstrap CDN from 4.1.3 to 5.3.x in index.html",
+        "Remove jQuery dependency (not needed with Bootstrap 5)",
+        "Update Font Awesome to latest version 6.x",
+        "Create new CSS structure with variables for colors, spacing, typography",
+        "Refactor style.css to remove minified Bootswatch code and use clean custom CSS",
+        "Merge index.css and style.css into a single organized stylesheet (styles.css)",
+        "Update HTML classes to Bootstrap 5 equivalents where needed",
+        "Test that all existing functionality works with new dependencies"
+      ]
+    },
+    {
+      "id": "FEAT-003",
+      "category": "Design System",
+      "description": "Implement dark mode with theme toggle and modernize typography/visual hierarchy. Define light and dark color palettes using CSS variables, add a theme toggle button, and update fonts for better readability.",
+      "priority": 3,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Define CSS custom properties for light theme (--color-bg, --color-text, --color-primary, --color-secondary, etc.)",
+        "Define CSS custom properties for dark theme with [data-theme='dark'] selector",
+        "Add theme toggle button in header/navigation area",
+        "Implement JavaScript for theme switching with localStorage persistence",
+        "Add prefers-color-scheme media query for OS-level dark mode detection",
+        "Update typography: choose modern font pairing (e.g., Inter for body, Poppins for headings)",
+        "Improve spacing and visual hierarchy throughout the page",
+        "Ensure all components adapt properly to both themes"
+      ]
+    },
+    {
+      "id": "FEAT-004",
+      "category": "Design System",
+      "description": "Improve mobile responsiveness across all sections. Ensure the site looks great on all device sizes with proper breakpoints, flexible layouts, and touch-friendly interactions.",
+      "priority": 4,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Audit current responsive issues (fixed widths, header positioning, timeline layout)",
+        "Refactor header section for mobile (stack profile image and text vertically)",
+        "Fix header-inner positioning which uses absolute positioning with fixed percentages",
+        "Ensure timeline displays properly on mobile (single column, proper spacing)",
+        "Make footer responsive with stacked layout on mobile",
+        "Add appropriate padding and margins for mobile viewports",
+        "Test on various screen sizes (320px, 375px, 768px, 1024px, 1440px)",
+        "Ensure touch targets are appropriately sized (min 44px)"
+      ]
+    },
+    {
+      "id": "FEAT-005",
+      "category": "UX Enhancements",
+      "description": "Add smooth animations and transitions for scroll effects, hover states, and page elements. Implement subtle animations that enhance UX without being distracting.",
+      "priority": 5,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Add CSS transitions for hover effects on buttons, links, and cards",
+        "Implement scroll-triggered animations using Intersection Observer API",
+        "Add fade-in animations for timeline items as they come into view",
+        "Create smooth scroll behavior for navigation (if nav is added)",
+        "Add subtle scale/shadow transitions on social buttons hover",
+        "Implement loading animations for dynamic content",
+        "Ensure animations respect prefers-reduced-motion for accessibility",
+        "Test animations performance across devices"
+      ]
+    },
+    {
+      "id": "FEAT-006",
+      "category": "Content Sections",
+      "description": "Create a projects showcase section to display portfolio work with descriptions, technology stacks, and links to demos/repositories.",
+      "priority": 6,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Design project card component with image, title, description, tech tags, and links",
+        "Create projects section with responsive grid layout",
+        "Add projects data structure (can be inline or separate JSON file)",
+        "Include existing projects from timeline (FashionMNIST, LocationSentimentAnalysis, FileIndexing)",
+        "Add filtering capability by technology/category (optional enhancement)",
+        "Implement project card hover effects showing more details",
+        "Add 'View All Projects' link to GitHub profile",
+        "Ensure projects section works with dark mode"
+      ]
+    },
+    {
+      "id": "FEAT-007",
+      "category": "Content Sections",
+      "description": "Create a blog section structure. Set up the foundation for blog posts with a posts listing page and individual post layout.",
+      "priority": 7,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Create /blog/ directory structure",
+        "Design blog post card component for listing page",
+        "Create blog section on main page showing latest 2-3 posts",
+        "Create blog/index.html for full posts listing",
+        "Create blog post template (blog/post-template.html) for individual posts",
+        "Add blog navigation and pagination structure",
+        "Style blog typography for readability",
+        "Add sample placeholder post to demonstrate structure"
+      ]
+    },
+    {
+      "id": "FEAT-008",
+      "category": "Content Sections",
+      "description": "Update skills visualization with modern progress bars, categorized skill cards, or visual charts instead of simple text lists.",
+      "priority": 8,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Redesign skills section layout with categorized skill cards",
+        "Create skill categories: Languages, Frameworks/Tools, Databases, Cloud/DevOps",
+        "Implement visual skill level indicators (progress bars or proficiency dots)",
+        "Add technology icons using Font Awesome or devicons",
+        "Create responsive grid layout for skill cards",
+        "Add hover effects showing skill details or years of experience",
+        "Update skills content to reflect current technologies (add AWS, etc.)",
+        "Ensure skills section works with dark mode"
+      ]
+    },
+    {
+      "id": "FEAT-009",
+      "category": "Content Sections",
+      "description": "Add a testimonials/recommendations section to showcase professional endorsements and feedback.",
+      "priority": 9,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Design testimonial card component with quote, author name, title, and optional photo",
+        "Create testimonials section with carousel or grid layout",
+        "Add placeholder testimonials structure",
+        "Implement responsive layout for testimonial cards",
+        "Add subtle animation for testimonial transitions (if carousel)",
+        "Style testimonials appropriately for both light and dark modes",
+        "Include LinkedIn recommendations link for authenticity"
+      ]
+    },
+    {
+      "id": "FEAT-010",
+      "category": "Functionality",
+      "description": "Add a contact form with email functionality. Implement a working contact form using a form service like Formspree or Netlify Forms for static site compatibility.",
+      "priority": 10,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Design contact section with form and contact information",
+        "Create form fields: name, email, subject, message",
+        "Set up Formspree integration for form submission (free tier)",
+        "Add form validation (HTML5 validation + JavaScript enhancement)",
+        "Implement form submission feedback (success/error messages)",
+        "Add honeypot field for spam prevention",
+        "Style form for both light and dark modes",
+        "Test form submission functionality"
+      ]
+    },
+    {
+      "id": "FEAT-011",
+      "category": "Integration",
+      "description": "Integrate GitHub activity to display recent contributions, pinned repositories, or contribution graph on the portfolio.",
+      "priority": 11,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Research GitHub API options (REST API for public repos, github-readme-stats)",
+        "Add GitHub activity section to the portfolio",
+        "Display pinned/featured repositories with description and stars",
+        "Optionally embed GitHub contribution graph using available widgets",
+        "Implement caching strategy to avoid API rate limits",
+        "Style GitHub section consistently with site design",
+        "Add error handling for API failures",
+        "Ensure section works with dark mode"
+      ]
+    },
+    {
+      "id": "FEAT-012",
+      "category": "Technical",
+      "description": "Improve SEO with comprehensive meta tags, Open Graph data for social sharing, and structured data (JSON-LD) for search engines.",
+      "priority": 12,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Add comprehensive meta tags (description, keywords, author, viewport)",
+        "Add Open Graph meta tags for social media sharing (og:title, og:description, og:image, og:url)",
+        "Add Twitter Card meta tags for Twitter sharing",
+        "Implement JSON-LD structured data for Person schema",
+        "Add canonical URL tag",
+        "Create or update favicon set (multiple sizes)",
+        "Add robots.txt file",
+        "Create sitemap.xml for search engine indexing",
+        "Verify meta tags with social media debuggers"
+      ]
+    },
+    {
+      "id": "FEAT-013",
+      "category": "Technical",
+      "description": "Optimize performance through image compression, CSS/JS optimization, and lazy loading implementation.",
+      "priority": 13,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Audit current image sizes and compress all images (target 70-80% reduction)",
+        "Convert images to WebP format with fallbacks for older browsers",
+        "Add appropriate image dimensions (width/height attributes) to prevent layout shift",
+        "Implement lazy loading for images below the fold",
+        "Minify CSS files for production",
+        "Add defer/async attributes to script tags where appropriate",
+        "Implement critical CSS inlining for above-the-fold content",
+        "Test performance with Lighthouse and target 90+ score"
+      ]
+    },
+    {
+      "id": "FEAT-014",
+      "category": "Integration",
+      "description": "Add analytics integration (Google Analytics or privacy-friendly alternative) and resume download tracking.",
+      "priority": 14,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Choose analytics solution (Google Analytics 4 or privacy-friendly like Plausible/Umami)",
+        "Add analytics tracking code to the site",
+        "Implement resume download click tracking event",
+        "Add tracking for contact form submissions",
+        "Add tracking for external link clicks (GitHub, LinkedIn, etc.)",
+        "Ensure analytics respects user privacy preferences",
+        "Document analytics setup in README"
+      ]
+    },
+    {
+      "id": "FEAT-015",
+      "category": "Documentation",
+      "description": "Update README with comprehensive documentation including project overview, setup instructions, customization guide, and deployment information.",
+      "priority": 15,
+      "status": "pending",
+      "repository": "sankalpbhandari/sankalpbhandari.github.io",
+      "steps": [
+        "Add project title and description",
+        "Include technologies used section",
+        "Add project structure overview",
+        "Document local development setup",
+        "Add customization instructions (colors, content, etc.)",
+        "Include deployment information for GitHub Pages",
+        "Add screenshots of the portfolio",
+        "Include license information",
+        "Add acknowledgments/credits section"
+      ]
+    }
+  ]
+}
