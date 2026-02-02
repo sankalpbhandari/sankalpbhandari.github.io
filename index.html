@@ -189,6 +189,89 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
+    
+    <!-- 
+    ============================================================================
+    ANALYTICS INTEGRATION
+    ============================================================================
+    
+    SETUP INSTRUCTIONS:
+    1. Replace 'G-XXXXXXXXXX' below with your actual Google Analytics 4 Measurement ID
+    2. To find your Measurement ID:
+       - Go to Google Analytics (analytics.google.com)
+       - Select your property or create a new one (Admin > Create Property)
+       - Go to Admin > Data Streams > Web
+       - Your Measurement ID starts with "G-"
+    3. Set ANALYTICS_ENABLED to true when ready to enable tracking
+    
+    PRIVACY CONSIDERATIONS:
+    - Analytics is disabled by default (ANALYTICS_ENABLED = false)
+    - Users can opt-out by enabling "Do Not Track" in their browser
+    - Consider adding a cookie consent banner for GDPR compliance
+    
+    PRIVACY-FRIENDLY ALTERNATIVES:
+    Uncomment one of the following alternatives if you prefer privacy-focused analytics:
+    
+    Option 1: Plausible Analytics (plausible.io)
+    <script defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
+    
+    Option 2: Simple Analytics (simpleanalytics.com)
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+    
+    Option 3: Umami Analytics (umami.is) - Self-hosted option
+    <script async defer data-website-id="your-website-id" src="https://your-umami-instance.com/umami.js"></script>
+    
+    ============================================================================
+    -->
+    
+    <!-- Google Analytics 4 Configuration -->
+    <script>
+        // Analytics Configuration
+        // Set to true and add your Measurement ID to enable tracking
+        window.ANALYTICS_ENABLED = false;
+        window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    </script>
+    
+    <!-- Google Analytics 4 Script (only loads if enabled) -->
+    <script>
+        (function() {
+            // Check if analytics is enabled
+            if (!window.ANALYTICS_ENABLED || window.GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+                console.log('Analytics: Disabled or not configured. Set ANALYTICS_ENABLED=true and add your GA4 Measurement ID.');
+                return;
+            }
+            
+            // Check for Do Not Track preference
+            if (navigator.doNotTrack === '1' || window.doNotTrack === '1') {
+                console.log('Analytics: Respecting Do Not Track preference.');
+                return;
+            }
+            
+            // Load Google Analytics script
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+            document.head.appendChild(script);
+            
+            // Initialize gtag
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            window.gtag = gtag;
+            
+            gtag('js', new Date());
+            gtag('config', window.GA_MEASUREMENT_ID, {
+                // Anonymize IP for privacy
+                'anonymize_ip': true,
+                // Disable automatic pageview on single-page apps (we'll track manually if needed)
+                'send_page_view': true,
+                // Cookie settings
+                'cookie_flags': 'SameSite=None;Secure'
+            });
+            
+            console.log('Analytics: Google Analytics 4 initialized with ID:', window.GA_MEASUREMENT_ID);
+        })();
+    </script>
 </head>
 <body>
 <!-- Theme Toggle Button -->
@@ -2008,6 +2091,368 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+</script>
+
+<!-- 
+============================================================================
+ANALYTICS EVENT TRACKING
+============================================================================
+
+This script tracks the following events:
+1. Resume downloads - When users click the resume download link
+2. Contact form submissions - When the contact form is submitted successfully
+3. Social link clicks - Twitter, Facebook, LinkedIn, Email clicks
+4. GitHub profile/repository clicks - When users navigate to GitHub
+5. Theme toggle usage - When users switch between light and dark mode
+
+All events are only tracked if:
+- ANALYTICS_ENABLED is set to true
+- GA_MEASUREMENT_ID is properly configured
+- User has not enabled "Do Not Track"
+
+Events can be viewed in Google Analytics 4:
+- Reports > Engagement > Events
+- Or via Realtime report for testing
+
+============================================================================
+-->
+<script>
+(function() {
+    'use strict';
+    
+    /**
+     * Analytics Event Tracking Module
+     * Provides event tracking for key user interactions
+     */
+    const AnalyticsTracker = {
+        /**
+         * Check if analytics tracking is available
+         * @returns {boolean}
+         */
+        isEnabled: function() {
+            return window.ANALYTICS_ENABLED && 
+                   window.GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX' && 
+                   typeof window.gtag === 'function' &&
+                   navigator.doNotTrack !== '1' &&
+                   window.doNotTrack !== '1';
+        },
+        
+        /**
+         * Track a custom event
+         * @param {string} eventName - Name of the event
+         * @param {object} eventParams - Additional parameters
+         */
+        trackEvent: function(eventName, eventParams) {
+            if (!this.isEnabled()) {
+                console.log('Analytics Event (not sent - disabled):', eventName, eventParams);
+                return;
+            }
+            
+            try {
+                window.gtag('event', eventName, eventParams);
+                console.log('Analytics Event:', eventName, eventParams);
+            } catch (error) {
+                console.error('Analytics tracking error:', error);
+            }
+        },
+        
+        /**
+         * Track resume download
+         */
+        trackResumeDownload: function() {
+            this.trackEvent('file_download', {
+                'event_category': 'engagement',
+                'event_label': 'Resume Download',
+                'file_name': 'Resume_Sankalp_Bhandari.pdf',
+                'file_extension': 'pdf',
+                'link_text': 'Download Resume'
+            });
+        },
+        
+        /**
+         * Track contact form submission
+         * @param {string} status - 'success' or 'error'
+         */
+        trackContactFormSubmission: function(status) {
+            this.trackEvent('form_submission', {
+                'event_category': 'engagement',
+                'event_label': 'Contact Form',
+                'form_name': 'contact_form',
+                'submission_status': status
+            });
+        },
+        
+        /**
+         * Track social link click
+         * @param {string} platform - Social platform name
+         * @param {string} url - Link URL
+         */
+        trackSocialClick: function(platform, url) {
+            this.trackEvent('social_click', {
+                'event_category': 'engagement',
+                'event_label': platform,
+                'social_platform': platform,
+                'link_url': url
+            });
+        },
+        
+        /**
+         * Track GitHub profile or repository click
+         * @param {string} type - 'profile' or 'repository'
+         * @param {string} url - GitHub URL
+         * @param {string} repoName - Repository name (if applicable)
+         */
+        trackGitHubClick: function(type, url, repoName) {
+            this.trackEvent('github_click', {
+                'event_category': 'engagement',
+                'event_label': type === 'repository' ? 'Repository: ' + repoName : 'GitHub Profile',
+                'github_type': type,
+                'link_url': url,
+                'repository_name': repoName || ''
+            });
+        },
+        
+        /**
+         * Track theme toggle
+         * @param {string} newTheme - 'dark' or 'light'
+         */
+        trackThemeToggle: function(newTheme) {
+            this.trackEvent('theme_toggle', {
+                'event_category': 'ui_interaction',
+                'event_label': 'Theme changed to ' + newTheme,
+                'theme_selected': newTheme
+            });
+        },
+        
+        /**
+         * Track external link click
+         * @param {string} linkType - Type of link
+         * @param {string} url - Link URL
+         */
+        trackExternalLinkClick: function(linkType, url) {
+            this.trackEvent('external_link_click', {
+                'event_category': 'outbound',
+                'event_label': linkType,
+                'link_url': url
+            });
+        },
+        
+        /**
+         * Track section view (for scroll tracking)
+         * @param {string} sectionName - Name of the section viewed
+         */
+        trackSectionView: function(sectionName) {
+            this.trackEvent('section_view', {
+                'event_category': 'engagement',
+                'event_label': sectionName,
+                'section_name': sectionName
+            });
+        }
+    };
+    
+    // Expose tracker globally
+    window.AnalyticsTracker = AnalyticsTracker;
+    
+    // Initialize event listeners when DOM is ready
+    function initializeEventTracking() {
+        
+        // ========================================
+        // RESUME DOWNLOAD TRACKING
+        // ========================================
+        document.querySelectorAll('a[href*="Resume_Sankalp_Bhandari.pdf"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                AnalyticsTracker.trackResumeDownload();
+            });
+        });
+        
+        // ========================================
+        // SOCIAL LINK TRACKING
+        // ========================================
+        const socialPatterns = {
+            'linkedin': /linkedin\.com/i,
+            'twitter': /twitter\.com|x\.com/i,
+            'facebook': /facebook\.com/i,
+            'github': /github\.com/i,
+            'medium': /medium\.com/i,
+            'dev.to': /dev\.to/i,
+            'email': /^mailto:/i
+        };
+        
+        document.querySelectorAll('.social-buttons a, .contact-social-buttons a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href') || '';
+                
+                // Determine which social platform
+                for (const [platform, pattern] of Object.entries(socialPatterns)) {
+                    if (pattern.test(href)) {
+                        if (platform === 'github') {
+                            // Track as GitHub click
+                            AnalyticsTracker.trackGitHubClick('profile', href, '');
+                        } else {
+                            // Track as social click
+                            AnalyticsTracker.trackSocialClick(platform, href);
+                        }
+                        break;
+                    }
+                }
+            });
+        });
+        
+        // ========================================
+        // GITHUB REPOSITORY LINK TRACKING
+        // ========================================
+        // Track clicks on project repository links
+        document.querySelectorAll('.project-link[href*="github.com"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href') || '';
+                const repoMatch = href.match(/github\.com\/[^\/]+\/([^\/]+)/);
+                const repoName = repoMatch ? repoMatch[1] : '';
+                AnalyticsTracker.trackGitHubClick('repository', href, repoName);
+            });
+        });
+        
+        // Track clicks on "View All Projects on GitHub" button
+        document.querySelectorAll('a[href="https://github.com/sankalpbhandari"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                AnalyticsTracker.trackGitHubClick('profile', this.getAttribute('href'), '');
+            });
+        });
+        
+        // Track dynamically loaded repository cards (using event delegation)
+        const reposGrid = document.getElementById('github-repos-grid');
+        if (reposGrid) {
+            reposGrid.addEventListener('click', function(e) {
+                const repoCard = e.target.closest('.github-repo-card');
+                if (repoCard) {
+                    const href = repoCard.getAttribute('href') || '';
+                    const repoNameEl = repoCard.querySelector('.repo-name');
+                    const repoName = repoNameEl ? repoNameEl.textContent : '';
+                    AnalyticsTracker.trackGitHubClick('repository', href, repoName);
+                }
+            });
+        }
+        
+        // ========================================
+        // THEME TOGGLE TRACKING
+        // ========================================
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Get the new theme after toggle (slight delay to ensure state is updated)
+                setTimeout(function() {
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                    AnalyticsTracker.trackThemeToggle(currentTheme);
+                }, 50);
+            });
+        }
+        
+        // ========================================
+        // CONTACT FORM SUBMISSION TRACKING
+        // ========================================
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            // Store original submit handler reference
+            const originalSubmitHandler = contactForm.onsubmit;
+            
+            // Intercept form submission for tracking
+            // Note: The actual form submission is handled elsewhere, 
+            // so we track when success/error states are shown
+            
+            // Monitor for success state
+            const formSuccess = document.getElementById('form-success');
+            if (formSuccess) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                            const display = window.getComputedStyle(formSuccess).display;
+                            if (display !== 'none') {
+                                AnalyticsTracker.trackContactFormSubmission('success');
+                            }
+                        }
+                    });
+                });
+                observer.observe(formSuccess, { attributes: true });
+            }
+            
+            // Monitor for error state
+            const formError = document.getElementById('form-error');
+            if (formError) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                            const display = window.getComputedStyle(formError).display;
+                            if (display !== 'none') {
+                                AnalyticsTracker.trackContactFormSubmission('error');
+                            }
+                        }
+                    });
+                });
+                observer.observe(formError, { attributes: true });
+            }
+        }
+        
+        // ========================================
+        // EXTERNAL LINK TRACKING (Blog links, etc.)
+        // ========================================
+        document.querySelectorAll('.blog-read-more, .blog-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href') || '';
+                let linkType = 'external';
+                
+                if (href.includes('medium.com')) linkType = 'Medium Blog';
+                else if (href.includes('dev.to')) linkType = 'Dev.to Blog';
+                else if (href.includes('linkedin.com')) linkType = 'LinkedIn Article';
+                
+                AnalyticsTracker.trackExternalLinkClick(linkType, href);
+            });
+        });
+        
+        // ========================================
+        // SECTION VIEW TRACKING (Optional)
+        // ========================================
+        // Track when users scroll to different sections
+        if ('IntersectionObserver' in window) {
+            const sectionObserverOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Section is 50% visible
+            };
+            
+            const trackedSections = new Set();
+            
+            const sectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        // Only track each section once per session
+                        if (sectionId && !trackedSections.has(sectionId)) {
+                            trackedSections.add(sectionId);
+                            AnalyticsTracker.trackSectionView(sectionId);
+                        }
+                    }
+                });
+            }, sectionObserverOptions);
+            
+            // Observe main sections
+            const sectionsToTrack = ['about', 'skills', 'projects', 'github-activity', 'timeline', 'blog', 'testimonials', 'contact'];
+            sectionsToTrack.forEach(function(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    sectionObserver.observe(section);
+                }
+            });
+        }
+        
+        console.log('Analytics: Event tracking initialized');
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeEventTracking);
+    } else {
+        initializeEventTracking();
+    }
+})();
 </script>
 </body>
 </html>
