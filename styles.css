@@ -15,6 +15,7 @@
    7c. Blog Section
    7d. Testimonials Section
    7e. Contact Section
+   7f. GitHub Activity Section
    8. Timeline Section
    9. Footer
    10. Components (Buttons, Progress Bars, Social)
@@ -1676,6 +1677,506 @@ section h3.section-subheading {
 .testimonial-card:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
 .testimonial-card:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
 .testimonial-card:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
+
+/* ============================================
+   7f. GitHub Activity Section
+   ============================================ */
+.github-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-body);
+}
+
+/* GitHub Stats Container */
+.github-stats-container {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Individual Stat Card */
+.github-stat-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-border-light);
+}
+
+.github-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* GitHub stat images */
+.github-stat-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+}
+
+/* Light/Dark mode image visibility */
+.light-mode-img {
+  display: block;
+}
+
+.dark-mode-img {
+  display: none;
+}
+
+[data-theme="dark"] .light-mode-img {
+  display: none;
+}
+
+[data-theme="dark"] .dark-mode-img {
+  display: block;
+}
+
+/* Fallback state for stat cards */
+.stat-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.stat-fallback i {
+  font-size: 2rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+  padding: 0;
+}
+
+.github-stat-card.stat-error .github-stat-img {
+  display: none;
+}
+
+.github-stat-card.stat-error .stat-fallback {
+  display: flex;
+}
+
+/* GitHub Streak Card */
+.github-streak-container {
+  display: flex;
+  justify-content: center;
+}
+
+.github-streak-card {
+  max-width: 700px;
+  width: 100%;
+}
+
+/* GitHub Repositories Section */
+.github-repos-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.github-repos-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-family: var(--font-family-headings);
+}
+
+.github-repos-title i {
+  color: var(--color-accent);
+  padding: 0;
+}
+
+/* Repos Grid */
+.github-repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Repository Card */
+.github-repo-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+}
+
+.github-repo-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.github-repo-card:hover .repo-name {
+  color: var(--color-accent);
+}
+
+/* Repo Header */
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.repo-icon {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  padding: 0;
+}
+
+.repo-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-link);
+  word-break: break-word;
+  transition: color var(--transition-base);
+}
+
+/* Repo Description */
+.repo-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Repo Meta (language, stars, forks) */
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: auto;
+}
+
+.repo-language,
+.repo-stars,
+.repo-forks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.repo-language i,
+.repo-stars i,
+.repo-forks i {
+  padding: 0;
+  font-size: 12px;
+}
+
+.repo-stars i {
+  color: var(--color-accent);
+}
+
+.language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--border-radius-full);
+  flex-shrink: 0;
+}
+
+/* Loading State */
+.github-repo-loading {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-muted);
+  gap: var(--spacing-md);
+}
+
+.loading-spinner i {
+  font-size: 2rem;
+  color: var(--color-accent);
+  padding: 0;
+}
+
+/* Error State */
+.github-repos-error {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-2xl);
+  gap: var(--spacing-md);
+  background-color: var(--color-bg-muted);
+  border-radius: var(--border-radius-lg);
+}
+
+.github-repos-error i {
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  padding: 0;
+}
+
+.github-repos-error p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Contribution Graph Section */
+.github-contribution-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.github-contribution-wrapper {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-light);
+  text-align: center;
+  overflow-x: auto;
+  position: relative;
+}
+
+.github-contribution-graph {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Contribution Fallback */
+.contribution-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  color: var(--color-text-muted);
+}
+
+.contribution-fallback i {
+  font-size: 2rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+  padding: 0;
+}
+
+.contribution-fallback a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.github-contribution-wrapper.contribution-error .github-contribution-graph {
+  display: none;
+}
+
+.github-contribution-wrapper.contribution-error .contribution-fallback {
+  display: flex;
+}
+
+/* GitHub Profile Button */
+.github-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.github-profile-btn i {
+  padding: 0;
+}
+
+/* Dark Mode - GitHub Section */
+[data-theme="dark"] .github-section {
+  background-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .github-stat-card {
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .github-repo-card {
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .github-repo-card:hover {
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .repo-name {
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .github-repo-card:hover .repo-name {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .repo-description {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .github-contribution-wrapper {
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .github-repos-error {
+  background-color: #2d2d2d;
+}
+
+[data-theme="dark"] .github-repos-title {
+  color: var(--color-text-primary);
+}
+
+/* GitHub Section - Responsive */
+@media (max-width: 575.98px) {
+  .github-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .github-stat-card {
+    padding: var(--spacing-md);
+    min-height: 150px;
+  }
+  
+  .github-streak-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .github-repos-section {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .github-repos-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .github-repo-card {
+    padding: var(--spacing-md);
+    min-height: auto;
+  }
+  
+  .repo-name {
+    font-size: var(--font-size-sm);
+  }
+  
+  .github-contribution-section {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .github-contribution-wrapper {
+    padding: var(--spacing-md);
+  }
+  
+  .github-contribution-graph {
+    min-width: 650px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-xl);
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .github-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .github-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* GitHub section animation on scroll */
+.github-stats-container.animate-on-scroll,
+.github-repos-section.animate-on-scroll,
+.github-contribution-section.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.github-stats-container.animate-on-scroll.is-visible,
+.github-repos-section.animate-on-scroll.is-visible,
+.github-contribution-section.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for repo cards */
+.github-repo-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.github-repo-card:nth-child(1) { animation-delay: 0.1s; }
+.github-repo-card:nth-child(2) { animation-delay: 0.15s; }
+.github-repo-card:nth-child(3) { animation-delay: 0.2s; }
+.github-repo-card:nth-child(4) { animation-delay: 0.25s; }
+.github-repo-card:nth-child(5) { animation-delay: 0.3s; }
+.github-repo-card:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ============================================
    8. Timeline Section

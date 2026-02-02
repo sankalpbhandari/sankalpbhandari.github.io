@@ -536,6 +536,130 @@
     </div>
 </section>
 
+<!-- GitHub Activity Section -->
+<section id="github-activity" class="github-section">
+    <div class="container">
+        <h3 class="text-center w-100 animate-on-scroll">GitHub Activity</h3>
+        <p class="text-center section-subtitle animate-on-scroll animate-delay-100">
+            My open source contributions and coding activity
+        </p>
+        
+        <!-- GitHub Stats Cards -->
+        <div class="github-stats-container animate-on-scroll animate-delay-200">
+            <div class="github-stats-grid">
+                <!-- GitHub Stats Card -->
+                <div class="github-stat-card">
+                    <img src="https://github-readme-stats.vercel.app/api?username=sankalpbhandari&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=333333&text_color=666666&icon_color=ffb400" 
+                         alt="GitHub Stats" 
+                         class="github-stat-img light-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <img src="https://github-readme-stats.vercel.app/api?username=sankalpbhandari&show_icons=true&theme=dark&hide_border=true&bg_color=1e1e1e&title_color=e0e0e0&text_color=b0b0b0&icon_color=ffb400" 
+                         alt="GitHub Stats" 
+                         class="github-stat-img dark-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <div class="stat-fallback">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Stats temporarily unavailable</span>
+                    </div>
+                </div>
+                
+                <!-- Top Languages Card -->
+                <div class="github-stat-card">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sankalpbhandari&layout=compact&theme=default&hide_border=true&bg_color=ffffff&title_color=333333&text_color=666666" 
+                         alt="Top Languages" 
+                         class="github-stat-img light-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sankalpbhandari&layout=compact&theme=dark&hide_border=true&bg_color=1e1e1e&title_color=e0e0e0&text_color=b0b0b0" 
+                         alt="Top Languages" 
+                         class="github-stat-img dark-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <div class="stat-fallback">
+                        <i class="fas fa-code"></i>
+                        <span>Languages unavailable</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Streak Stats -->
+            <div class="github-streak-container">
+                <div class="github-stat-card github-streak-card">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sankalpbhandari&theme=default&hide_border=true&background=ffffff&ring=ffb400&fire=ffb400&currStreakLabel=333333" 
+                         alt="GitHub Streak" 
+                         class="github-stat-img light-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sankalpbhandari&theme=dark&hide_border=true&background=1e1e1e&ring=ffb400&fire=ffb400&currStreakLabel=e0e0e0" 
+                         alt="GitHub Streak" 
+                         class="github-stat-img dark-mode-img"
+                         loading="lazy"
+                         onerror="this.parentElement.classList.add('stat-error')">
+                    <div class="stat-fallback">
+                        <i class="fas fa-fire-alt"></i>
+                        <span>Streak data unavailable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dynamic Repositories Section -->
+        <div class="github-repos-section animate-on-scroll animate-delay-300">
+            <h4 class="github-repos-title">
+                <i class="fas fa-star"></i>
+                Popular Repositories
+            </h4>
+            <div id="github-repos-grid" class="github-repos-grid">
+                <!-- Loading State -->
+                <div class="github-repo-loading">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <span>Loading repositories...</span>
+                </div>
+            </div>
+            
+            <!-- Error/Fallback State -->
+            <div id="github-repos-error" class="github-repos-error" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Unable to load repositories. Please visit my GitHub profile directly.</p>
+                <a href="https://github.com/sankalpbhandari" target="_blank" class="btn btn-outline-primary">
+                    <i class="fab fa-github me-2"></i>View on GitHub
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contribution Graph -->
+        <div class="github-contribution-section animate-on-scroll animate-delay-400">
+            <h4 class="github-repos-title">
+                <i class="fas fa-calendar-alt"></i>
+                Contribution Activity
+            </h4>
+            <div class="github-contribution-wrapper">
+                <img src="https://ghchart.rshah.org/ffb400/sankalpbhandari" 
+                     alt="GitHub Contribution Graph" 
+                     class="github-contribution-graph"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('contribution-error')">
+                <div class="contribution-fallback">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Contribution graph unavailable</span>
+                    <a href="https://github.com/sankalpbhandari" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- GitHub Profile Link -->
+        <div class="text-center mt-4 animate-on-scroll">
+            <a href="https://github.com/sankalpbhandari" target="_blank" class="btn btn-outline-primary github-profile-btn">
+                <i class="fab fa-github me-2"></i>Visit Full GitHub Profile
+            </a>
+        </div>
+    </div>
+</section>
+
 <div class='container'>
     <div class='col-12'>
         <div class="col-12">
@@ -1524,6 +1648,180 @@
             formError.classList.remove('animate-in');
         }
     };
+})();
+</script>
+
+<!-- GitHub Repositories Fetch Script -->
+<script>
+(function() {
+    'use strict';
+    
+    const GITHUB_USERNAME = 'sankalpbhandari';
+    const REPOS_CONTAINER = document.getElementById('github-repos-grid');
+    const REPOS_ERROR = document.getElementById('github-repos-error');
+    const CACHE_KEY = 'github_repos_cache';
+    const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+    
+    // Check for cached data
+    function getCachedData() {
+        try {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                const { data, timestamp } = JSON.parse(cached);
+                if (Date.now() - timestamp < CACHE_DURATION) {
+                    return data;
+                }
+            }
+        } catch (e) {
+            console.warn('Cache read error:', e);
+        }
+        return null;
+    }
+    
+    // Save data to cache
+    function setCachedData(data) {
+        try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                data: data,
+                timestamp: Date.now()
+            }));
+        } catch (e) {
+            console.warn('Cache write error:', e);
+        }
+    }
+    
+    // Format large numbers (e.g., 1200 -> 1.2k)
+    function formatNumber(num) {
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+        }
+        return num.toString();
+    }
+    
+    // Get language color
+    function getLanguageColor(language) {
+        const colors = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6',
+            'Python': '#3572A5',
+            'Java': '#b07219',
+            'C++': '#f34b7d',
+            'C': '#555555',
+            'C#': '#239120',
+            'Ruby': '#701516',
+            'Go': '#00ADD8',
+            'Rust': '#dea584',
+            'Swift': '#F05138',
+            'Kotlin': '#A97BFF',
+            'PHP': '#4F5D95',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Shell': '#89e051',
+            'Jupyter Notebook': '#DA5B0B',
+            'Vue': '#41b883',
+            'React': '#61dafb'
+        };
+        return colors[language] || '#858585';
+    }
+    
+    // Create repository card HTML
+    function createRepoCard(repo) {
+        const languageColor = getLanguageColor(repo.language);
+        const description = repo.description 
+            ? (repo.description.length > 100 
+                ? repo.description.substring(0, 100) + '...' 
+                : repo.description)
+            : 'No description available';
+        
+        return `
+            <a href="${repo.html_url}" target="_blank" class="github-repo-card" rel="noopener noreferrer">
+                <div class="repo-header">
+                    <i class="fas fa-book-bookmark repo-icon"></i>
+                    <span class="repo-name">${repo.name}</span>
+                </div>
+                <p class="repo-description">${description}</p>
+                <div class="repo-meta">
+                    ${repo.language ? `
+                        <span class="repo-language">
+                            <span class="language-dot" style="background-color: ${languageColor}"></span>
+                            ${repo.language}
+                        </span>
+                    ` : ''}
+                    <span class="repo-stars">
+                        <i class="fas fa-star"></i>
+                        ${formatNumber(repo.stargazers_count)}
+                    </span>
+                    <span class="repo-forks">
+                        <i class="fas fa-code-branch"></i>
+                        ${formatNumber(repo.forks_count)}
+                    </span>
+                </div>
+            </a>
+        `;
+    }
+    
+    // Render repositories
+    function renderRepos(repos) {
+        if (!REPOS_CONTAINER) return;
+        
+        // Sort by stars and filter out forks, take top 6
+        const topRepos = repos
+            .filter(repo => !repo.fork)
+            .sort((a, b) => b.stargazers_count - a.stargazers_count)
+            .slice(0, 6);
+        
+        if (topRepos.length === 0) {
+            showError();
+            return;
+        }
+        
+        const reposHTML = topRepos.map(createRepoCard).join('');
+        REPOS_CONTAINER.innerHTML = reposHTML;
+    }
+    
+    // Show error state
+    function showError() {
+        if (REPOS_CONTAINER) {
+            REPOS_CONTAINER.style.display = 'none';
+        }
+        if (REPOS_ERROR) {
+            REPOS_ERROR.style.display = 'flex';
+        }
+    }
+    
+    // Fetch repositories from GitHub API
+    function fetchRepos() {
+        // Check cache first
+        const cachedData = getCachedData();
+        if (cachedData) {
+            renderRepos(cachedData);
+            return;
+        }
+        
+        // Fetch from API
+        fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=30`)
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('GitHub API error: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(function(repos) {
+                setCachedData(repos);
+                renderRepos(repos);
+            })
+            .catch(function(error) {
+                console.error('Failed to fetch repos:', error);
+                showError();
+            });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fetchRepos);
+    } else {
+        fetchRepos();
+    }
 })();
 </script>
 </body>
