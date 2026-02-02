@@ -12,7 +12,7 @@
       "category": "Cleanup",
       "description": "Remove all personal event pages (wedding, marriage, reception, NamingCeremony) including directories and related JSON files (event.json, names.json). This will free up ~73MB of space and remove unrelated content from the portfolio.",
       "priority": 1,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Delete /wedding/ directory and all contents",
