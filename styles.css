@@ -11,6 +11,7 @@
    5. Header Section
    6. About Section
    7. Skills Section
+   7b. Projects Section
    8. Timeline Section
    9. Footer
    10. Components (Buttons, Progress Bars, Social)
@@ -483,6 +484,316 @@ section h3.section-subheading {
 .progress-bar-danger,
 .bg-danger {
   background-color: var(--color-danger);
+}
+
+/* ============================================
+   7b. Projects Section
+   ============================================ */
+.projects-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Project Card */
+.project-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Project Image/Icon Area */
+.project-image {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-text-headings) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-icon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Project Overlay on Hover */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+
+/* Project Links in Overlay */
+.project-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-accent);
+  color: var(--color-bg-dark);
+  font-size: var(--font-size-xl);
+  transition: transform var(--transition-base), background-color var(--transition-base);
+  text-decoration: none;
+}
+
+.project-link:hover {
+  transform: scale(1.15);
+  background-color: var(--color-text-light);
+  color: var(--color-bg-dark);
+}
+
+.project-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.5);
+}
+
+/* Project Content */
+.project-content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-headings);
+}
+
+.project-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Tech Stack Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: auto;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-muted);
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.tag:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-dark);
+}
+
+/* View All Projects Button */
+.btn-outline-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg-body);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.5);
+}
+
+.btn-outline-primary i {
+  padding: 0;
+  margin-right: var(--spacing-xs);
+}
+
+/* Dark Mode - Projects Section */
+[data-theme="dark"] .projects-section {
+  background-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .project-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .project-image {
+  background: linear-gradient(135deg, #2d2d2d 0%, #444444 100%);
+}
+
+[data-theme="dark"] .project-icon {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .project-title {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .tag {
+  background-color: #3d3d3d;
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .tag:hover {
+  background-color: var(--color-accent);
+  color: #121212;
+}
+
+[data-theme="dark"] .btn-outline-primary {
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-bg-dark);
+}
+
+/* Projects Section - Responsive */
+@media (max-width: 575.98px) {
+  .projects-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .project-image {
+    height: 150px;
+  }
+  
+  .project-icon {
+    font-size: 3rem;
+  }
+  
+  .project-content {
+    padding: var(--spacing-md);
+  }
+  
+  .project-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .project-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .btn-outline-primary {
+    width: 100%;
+    justify-content: center;
+    margin: 0 var(--spacing-sm);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto var(--spacing-xl);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .project-image {
+    height: 160px;
+  }
 }
 
 /* ============================================
@@ -1832,6 +2143,37 @@ figcaption {
   }
 }
 
+/* Project Card Animations */
+.project-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.project-card.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger animation for project cards */
+.project-card:nth-child(1).animate-on-scroll { transition-delay: 0.1s; }
+.project-card:nth-child(2).animate-on-scroll { transition-delay: 0.2s; }
+.project-card:nth-child(3).animate-on-scroll { transition-delay: 0.3s; }
+.project-card:nth-child(4).animate-on-scroll { transition-delay: 0.4s; }
+
+/* Project icon subtle floating animation */
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.project-card:hover .project-icon {
+  animation: iconFloat 2s ease-in-out infinite;
+}
+
 /* Enhanced Social Button Hover Effects */
 ul.social-buttons li a {
   transition: transform 0.3s ease, 
@@ -2032,8 +2374,15 @@ button:focus,
   .img-me:hover,
   .btn:hover,
   .footer-address:hover,
-  .quicklinks a:hover {
+  .quicklinks a:hover,
+  .project-card:hover,
+  .project-link:hover {
     transform: none !important;
+  }
+  
+  /* Project cards - no icon animation */
+  .project-card:hover .project-icon {
+    animation: none !important;
   }
   
   /* Keep color transitions for theme switching */

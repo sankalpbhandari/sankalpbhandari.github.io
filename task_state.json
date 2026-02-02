@@ -101,7 +101,7 @@
       "category": "Content Sections",
       "description": "Create a projects showcase section to display portfolio work with descriptions, technology stacks, and links to demos/repositories.",
       "priority": 6,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Design project card component with image, title, description, tech tags, and links",
