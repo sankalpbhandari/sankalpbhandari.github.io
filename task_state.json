@@ -29,7 +29,7 @@
       "category": "Foundation",
       "description": "Upgrade dependencies and restructure CSS architecture. Migrate from Bootstrap 4 + jQuery to Bootstrap 5 (no jQuery dependency). Consolidate and reorganize CSS files with CSS custom properties (variables) for theming support.",
       "priority": 2,
-      "status": "pending",
+      "status": "completed",
       "repository": "sankalpbhandari/sankalpbhandari.github.io",
       "steps": [
         "Update Bootstrap CDN from 4.1.3 to 5.3.x in index.html",
